@@ -4,7 +4,7 @@
   <style>
     .communityArea {
       fill: none;
-      stroke: none;
+      stroke: black;
     }
     .communityArea-boundary {
       fill: none;
@@ -26,35 +26,23 @@
 
     console.log(width + "," + height);
 
-    var projection = d3.geo.albers()
+    var projection = d3.geo.mercator()
       .translate([width/2, height/2])
-      .center([87.6847, 41.8369])
-      .parallels([41,42.5]);
+      .center([-87.6692, 41.8500])
+      .scale(50000);
 
     var t;
     d3.json(ssa_boundries, function(error, chicago) {
       if (error) return console.error(error);
-      t = chicago;
 
       var communities = topojson.feature(chicago, chicago.objects.commAreas);
       var path = d3.geo.path().projection(projection);
-
       svg.selectAll(".communityArea")
           .data(communities.features)
         .enter().append("path")
           .attr("class", "communityArea")
           .attr("id", function(d,i) { return "communities " + i })
           .attr("d", path);
-
-      svg.append("path")
-        .datum(topojson.mesh(chicago, chicago.objects.commAreas),
-            function(a,b) {return a === b})
-        .attr("d", path)
-        .attr("class", "communityArea-boundary");
-
-      // svg.append("path")
-      //   .datum(topojson.feature(chicago, chicago.objects.commAreas))
-      //   .attr("d", d3.geo.path().projection(d3.geo.mercator()));
     });
 
   </script>
