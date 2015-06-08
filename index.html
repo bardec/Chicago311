@@ -36,6 +36,22 @@
 
     var data;
     var collection = [];
+    var ssa_percentages = [];
+    for (i = 1; i < 77; i++) {
+      ssa_percentages.push({});
+    }
+
+    //get percentage for all SSAs
+    d3.csv("resources/summarized_311_calls.csv", function(income) {
+      for (row in income) {
+        row = parseInt(row);
+        ssa = parseInt(income[row]['SSA']);
+        console.log(ssa);
+        type_request = income[row]['Type of Service Request'];
+        percentage = parseFloat(income[row]['Percentage of Total']);
+        ssa_percentages[ssa][type_request] = percentage
+      }
+    });
 
     d3.csv("resources/income.csv", function(income){
       data = income;
