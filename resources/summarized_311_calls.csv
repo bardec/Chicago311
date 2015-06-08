@@ -1,0 +1,260 @@
+SSA,Type of Service Request,Percentage of Total
+56,Pothole in Street,0.1019786910197869
+56,Abandoned Vehicle Complaint,0.0700152207001522
+56,Graffiti Removal,0.273972602739726
+56,Garbage Cart Black Maintenance/Replacement,0.1598173515981735
+56,Pot Hole in Street,0.3942161339421613
+42,Pothole in Street,0.21110779337115557
+42,Abandoned Vehicle Complaint,0.08569722305165721
+42,Graffiti Removal,0.0904747685876381
+42,Garbage Cart Black Maintenance/Replacement,0.15497163332338013
+42,Pot Hole in Street,0.457748581666169
+43,Pothole in Street,0.059282925097621585
+43,Abandoned Vehicle Complaint,0.06673766418175364
+43,Graffiti Removal,0.6192758253461129
+43,Garbage Cart Black Maintenance/Replacement,0.09034433794817182
+43,Pot Hole in Street,0.1643592474263401
+60,Pothole in Street,0.046133567662565905
+60,Abandoned Vehicle Complaint,0.05008787346221441
+60,Graffiti Removal,0.765597539543058
+60,Garbage Cart Black Maintenance/Replacement,0.0528705330990041
+60,Pot Hole in Street,0.08531048623315758
+61,Pothole in Street,0.15512465373961218
+61,Abandoned Vehicle Complaint,0.08587257617728532
+61,Graffiti Removal,0.3785780240073869
+61,Garbage Cart Black Maintenance/Replacement,0.05632502308402586
+61,Pot Hole in Street,0.32409972299168976
+62,Pothole in Street,0.17209302325581396
+62,Abandoned Vehicle Complaint,0.14418604651162792
+62,Graffiti Removal,0.17674418604651163
+62,Garbage Cart Black Maintenance/Replacement,0.027906976744186046
+62,Pot Hole in Street,0.4790697674418605
+63,Pothole in Street,0.06085083467959074
+63,Abandoned Vehicle Complaint,0.10608508346795907
+63,Graffiti Removal,0.20786214324178784
+63,Garbage Cart Black Maintenance/Replacement,0.5363489499192245
+63,Pot Hole in Street,0.0888529886914378
+64,Pothole in Street,0.09047619047619047
+64,Abandoned Vehicle Complaint,0.0380952380952381
+64,Graffiti Removal,0.10952380952380952
+64,Garbage Cart Black Maintenance/Replacement,0.37142857142857144
+64,Pot Hole in Street,0.3904761904761905
+52,Pothole in Street,0.07352941176470588
+52,Abandoned Vehicle Complaint,0.1213235294117647
+52,Graffiti Removal,0.11580882352941177
+52,Garbage Cart Black Maintenance/Replacement,0.18933823529411764
+52,Pot Hole in Street,0.5
+24,Pothole in Street,0.0748
+24,Abandoned Vehicle Complaint,0.081
+24,Graffiti Removal,0.5592
+24,Garbage Cart Black Maintenance/Replacement,0.0314
+24,Pot Hole in Street,0.2536
+25,Pothole in Street,0.031296689470787134
+25,Abandoned Vehicle Complaint,0.02461272312652355
+25,Graffiti Removal,0.820869701973736
+25,Garbage Cart Black Maintenance/Replacement,0.05528033341196823
+25,Pot Hole in Street,0.06794055201698514
+26,Pothole in Street,0.06626806178375685
+26,Abandoned Vehicle Complaint,0.0719149642916459
+26,Graffiti Removal,0.6485633615678459
+26,Garbage Cart Black Maintenance/Replacement,0.03753529314067431
+26,Pot Hole in Street,0.17571831921607706
+27,Pothole in Street,0.13629201680672268
+27,Abandoned Vehicle Complaint,0.07471113445378151
+27,Graffiti Removal,0.4575892857142857
+27,Garbage Cart Black Maintenance/Replacement,0.1135766806722689
+27,Pot Hole in Street,0.21783088235294118
+20,Pothole in Street,0.1971595655806182
+20,Abandoned Vehicle Complaint,0.04678362573099415
+20,Graffiti Removal,0.0910609857978279
+20,Garbage Cart Black Maintenance/Replacement,0.20634920634920634
+20,Pot Hole in Street,0.45864661654135336
+21,Pothole in Street,0.07813422554615233
+21,Abandoned Vehicle Complaint,0.05018697106868727
+21,Graffiti Removal,0.6760480220429049
+21,Garbage Cart Black Maintenance/Replacement,0.06730958472741587
+21,Pot Hole in Street,0.1283211966148396
+22,Pothole in Street,0.1179372197309417
+22,Abandoned Vehicle Complaint,0.10403587443946188
+22,Graffiti Removal,0.5080717488789238
+22,Garbage Cart Black Maintenance/Replacement,0.09820627802690583
+22,Pot Hole in Street,0.1717488789237668
+49,Pothole in Street,0.1468760222440301
+49,Abandoned Vehicle Complaint,0.1069676153091266
+49,Graffiti Removal,0.09649983644095518
+49,Garbage Cart Black Maintenance/Replacement,0.2904808635917566
+49,Pot Hole in Street,0.3591756624141315
+47,Pothole in Street,0.14224137931034483
+47,Abandoned Vehicle Complaint,0.17025862068965517
+47,Graffiti Removal,0.1320043103448276
+47,Garbage Cart Black Maintenance/Replacement,0.2192887931034483
+47,Pot Hole in Street,0.33620689655172414
+44,Pothole in Street,0.24074074074074073
+44,Abandoned Vehicle Complaint,0.027777777777777776
+44,Graffiti Removal,0.05787037037037037
+44,Garbage Cart Black Maintenance/Replacement,0.21064814814814814
+44,Pot Hole in Street,0.46296296296296297
+45,Pothole in Street,0.1467772814294831
+45,Abandoned Vehicle Complaint,0.06892150606253988
+45,Graffiti Removal,0.018506700701978303
+45,Garbage Cart Black Maintenance/Replacement,0.32865347798340777
+45,Pot Hole in Street,0.43714103382259095
+28,Pothole in Street,0.08815719596388741
+28,Abandoned Vehicle Complaint,0.08550185873605948
+28,Graffiti Removal,0.5841741901221456
+28,Garbage Cart Black Maintenance/Replacement,0.0807222517259692
+28,Pot Hole in Street,0.1614445034519384
+29,Pothole in Street,0.07200488997555012
+29,Abandoned Vehicle Complaint,0.054645476772616136
+29,Graffiti Removal,0.6809290953545232
+29,Garbage Cart Black Maintenance/Replacement,0.09474327628361859
+29,Pot Hole in Street,0.09767726161369193
+40,Pothole in Street,0.12074303405572756
+40,Abandoned Vehicle Complaint,0.053663570691434466
+40,Graffiti Removal,0.239422084623323
+40,Garbage Cart Black Maintenance/Replacement,0.2579979360165119
+40,Pot Hole in Street,0.3281733746130031
+41,Pothole in Street,0.13151750972762646
+41,Abandoned Vehicle Complaint,0.08949416342412451
+41,Graffiti Removal,0.05291828793774319
+41,Garbage Cart Black Maintenance/Replacement,0.3961089494163424
+41,Pot Hole in Street,0.3299610894941634
+1,Pothole in Street,0.10865290068829891
+1,Abandoned Vehicle Complaint,0.010816125860373648
+1,Graffiti Removal,0.700589970501475
+1,Garbage Cart Black Maintenance/Replacement,0.0004916420845624386
+1,Pot Hole in Street,0.17944936086529006
+3,Pothole in Street,0.07890822068430244
+3,Abandoned Vehicle Complaint,0.0697885000970183
+3,Graffiti Removal,0.5629002005044952
+3,Garbage Cart Black Maintenance/Replacement,0.13479076385744776
+3,Pot Hole in Street,0.1536123148567363
+2,Pothole in Street,0.05504587155963303
+2,Abandoned Vehicle Complaint,0.03827902562480228
+2,Graffiti Removal,0.6915533059158494
+2,Garbage Cart Black Maintenance/Replacement,0.08320151850680164
+2,Pot Hole in Street,0.13192027839291365
+5,Pothole in Street,0.0663771712158809
+5,Abandoned Vehicle Complaint,0.021712158808933003
+5,Graffiti Removal,0.5899503722084367
+5,Garbage Cart Black Maintenance/Replacement,0.11786600496277916
+5,Pot Hole in Street,0.20409429280397023
+4,Pothole in Street,0.1553398058252427
+4,Abandoned Vehicle Complaint,0.03559870550161812
+4,Graffiti Removal,0.07551240560949299
+4,Garbage Cart Black Maintenance/Replacement,0.28047464940668826
+4,Pot Hole in Street,0.45307443365695793
+7,Pothole in Street,0.026690391459074734
+7,Abandoned Vehicle Complaint,0.0017793594306049821
+7,Graffiti Removal,0.905693950177936
+7,Garbage Cart Black Maintenance/Replacement,0.0035587188612099642
+7,Pot Hole in Street,0.06227758007117438
+8,Pothole in Street,0.10456915056731064
+8,Abandoned Vehicle Complaint,0.09506286415210058
+8,Graffiti Removal,0.4697945415516713
+8,Garbage Cart Black Maintenance/Replacement,0.07083716651333946
+8,Pot Hole in Street,0.25973627721557807
+39,Pothole in Street,0.0298417894162575
+39,Abandoned Vehicle Complaint,0.025804691762138572
+39,Graffiti Removal,0.851936715766503
+39,Garbage Cart Black Maintenance/Replacement,0.03366066557555919
+39,Pot Hole in Street,0.05875613747954173
+32,Pothole in Street,0.13616838487972507
+32,Abandoned Vehicle Complaint,0.09536082474226804
+32,Graffiti Removal,0.0627147766323024
+32,Garbage Cart Black Maintenance/Replacement,0.39776632302405496
+32,Pot Hole in Street,0.3079896907216495
+14,Pothole in Street,0.10214168039538715
+14,Abandoned Vehicle Complaint,0.11696869851729819
+14,Graffiti Removal,0.14808713161266704
+14,Garbage Cart Black Maintenance/Replacement,0.4065531759106718
+14,Pot Hole in Street,0.22624931356397585
+10,Pothole in Street,0.0794846864365581
+10,Abandoned Vehicle Complaint,0.03232863393291201
+10,Graffiti Removal,0.6011181332036947
+10,Garbage Cart Black Maintenance/Replacement,0.0901798736023335
+10,Pot Hole in Street,0.1968886728245017
+13,Pothole in Street,0.128099173553719
+13,Abandoned Vehicle Complaint,0.027047332832456798
+13,Graffiti Removal,0.4470323065364388
+13,Garbage Cart Black Maintenance/Replacement,0.04658151765589782
+13,Pot Hole in Street,0.3512396694214876
+38,Pothole in Street,0.06432833648668317
+38,Abandoned Vehicle Complaint,0.060980934361810506
+38,Graffiti Removal,0.6789404744578664
+38,Garbage Cart Black Maintenance/Replacement,0.07990103332848203
+38,Pot Hole in Street,0.1158492213651579
+59,Pothole in Street,0.04260064681610349
+59,Abandoned Vehicle Complaint,0.037359205977472956
+59,Graffiti Removal,0.7317943570870972
+59,Garbage Cart Black Maintenance/Replacement,0.09702241552358648
+59,Pot Hole in Street,0.09122337459573994
+48,Pothole in Street,0.0951683748169839
+48,Abandoned Vehicle Complaint,0.1259150805270864
+48,Graffiti Removal,0.4816983894582723
+48,Garbage Cart Black Maintenance/Replacement,0.0746705710102489
+48,Pot Hole in Street,0.2225475841874085
+17,Pothole in Street,0.052525252525252523
+17,Abandoned Vehicle Complaint,0.022222222222222223
+17,Graffiti Removal,0.7455988455988456
+17,Garbage Cart Black Maintenance/Replacement,0.06392496392496393
+17,Pot Hole in Street,0.11572871572871572
+16,Pothole in Street,0.15471698113207547
+16,Abandoned Vehicle Complaint,0.022641509433962263
+16,Graffiti Removal,0.6415094339622641
+16,Pot Hole in Street,0.1811320754716981
+19,Pothole in Street,0.09290248124639354
+19,Abandoned Vehicle Complaint,0.07097518753606463
+19,Graffiti Removal,0.4339296018465089
+19,Garbage Cart Black Maintenance/Replacement,0.04327755337564916
+19,Pot Hole in Street,0.35891517599538375
+18,Pothole in Street,0.11910112359550562
+18,Abandoned Vehicle Complaint,0.04868913857677903
+18,Graffiti Removal,0.5288389513108614
+18,Garbage Cart Black Maintenance/Replacement,0.07790262172284644
+18,Pot Hole in Street,0.2254681647940075
+31,Pothole in Street,0.05415694461500675
+31,Abandoned Vehicle Complaint,0.06287608989315976
+31,Graffiti Removal,0.7197593024683777
+31,Garbage Cart Black Maintenance/Replacement,0.06250767530394204
+31,Pot Hole in Street,0.10069998771951369
+23,Pothole in Street,0.1665773968934119
+23,Abandoned Vehicle Complaint,0.05891805034815212
+23,Graffiti Removal,0.43974290305302627
+23,Garbage Cart Black Maintenance/Replacement,0.09694697375468667
+23,Pot Hole in Street,0.2378146759507231
+51,Pothole in Street,0.140302066772655
+51,Abandoned Vehicle Complaint,0.11466613672496026
+51,Graffiti Removal,0.06279809220985691
+51,Garbage Cart Black Maintenance/Replacement,0.3404213036565978
+51,Pot Hole in Street,0.34181240063593005
+50,Pothole in Street,0.15055305202785743
+50,Abandoned Vehicle Complaint,0.0737402703809914
+50,Graffiti Removal,0.11696026218762802
+50,Garbage Cart Black Maintenance/Replacement,0.30233510856206475
+50,Pot Hole in Street,0.35641130684145844
+35,Pothole in Street,0.09462656302805002
+35,Abandoned Vehicle Complaint,0.023994592767826967
+35,Graffiti Removal,0.6931395741804663
+35,Garbage Cart Black Maintenance/Replacement,0.0682663061845218
+35,Pot Hole in Street,0.11997296383913485
+34,Pothole in Street,0.08976248976248977
+34,Abandoned Vehicle Complaint,0.07354627354627355
+34,Graffiti Removal,0.6208026208026208
+34,Garbage Cart Black Maintenance/Replacement,0.029320229320229322
+34,Pot Hole in Street,0.18656838656838656
+55,Pothole in Street,0.12009512485136742
+55,Abandoned Vehicle Complaint,0.06896551724137931
+55,Graffiti Removal,0.07372175980975029
+55,Garbage Cart Black Maintenance/Replacement,0.38882282996432815
+55,Pot Hole in Street,0.34839476813317477
+54,Pothole in Street,0.08457201435161456
+54,Abandoned Vehicle Complaint,0.04254228600717581
+54,Graffiti Removal,0.5996924654023578
+54,Garbage Cart Black Maintenance/Replacement,0.03690415171706817
+54,Pot Hole in Street,0.2362890825217837
+33,Pothole in Street,0.05504448801085809
+33,Abandoned Vehicle Complaint,0.028577891720705777
+33,Graffiti Removal,0.7935454682551651
+33,Garbage Cart Black Maintenance/Replacement,0.04791886593274016
+33,Pot Hole in Street,0.07491328608053084
