@@ -199,13 +199,16 @@
                    
                    var sel = svg.selectAll(".bar").data(data);
                    
-                   sel.enter().append("rect").attr("class", "bar");
+                   sel.enter().append("rect").attr("class", "bar")
+                   .on('mouseover', tip.show)
+                   .on('mouseout', tip.hide);
 
                    sel.transition()
                    .attr("x", function(d) { return x(d["Name"]); })
                    .attr("width", x.rangeBand())
                    .attr("y", function(d) { return y(d["Average Response Time"]); })
-                   .attr("height", function(d) { return height - y(d["Average Response Time"]); });
+                   .attr("height", function(d) { return height - y(d["Average Response Time"]); })
+                   
                    sel.exit().remove();
                    
                    d3.select("#des").on("click", changedes);
