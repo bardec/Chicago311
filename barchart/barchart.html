@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+    
+    
     <body>
+        <h1>Average 311 Call Response Times by Community Area / Police District</h1>
+        <h2>City of Chicago</h2>
         <style>
             .bar {
                 fill: steelblue;
@@ -24,11 +28,40 @@
             .x.axis path{
                 display: none;
             }
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+        }
         
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\25BC";
+            position: absolute;
+            text-align: center;
+        }
+        
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+        }
         
         </style>
+        <label><input type="checkbox" id="des">Sort Descending</label>
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="http://d3js.org/topojson.v1.min.js"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
         <script>
             var margin = {top: 20, right: 20, bottom: 100, left: 40},
             width = 960 - margin.left - margin.right,
@@ -49,12 +82,19 @@
             .orient("left")
             .ticks(10);
             
+            var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+                  return "<strong>Average Response Time Days:</strong> <span style='color:red'>" + d["Average Response Time"] + "</span>";
+                  })
+            
             var svg = d3.select("body").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            
+            svg.call(tip);
             d3.csv("../resources/summarized_neighborhood.csv", type, function(error, data){
                    /*
                    var data = d3.nest()
@@ -99,15 +139,180 @@
                    .attr("x", function(d) { return x(d["Name"]); })
                    .attr("width", x.rangeBand())
                    .attr("y", function(d) { return y(d["Average Response Time"]); })
-                   .attr("height", function(d) { return height - y(d["Average Response Time"]); });
+                   .attr("height", function(d) { return height - y(d["Average Response Time"]); })
+                   .on('mouseover', tip.show)
+                   .on('mouseout', tip.hide);
+                   
+                   d3.select("#des").on("click", changedes);
+                   
+                   function changedes() {
+                   
+                   // Copy-on-write since tweens are evaluated after a delay.
+                   var x0 = x.domain(data.sort(this.checked
+                                               ? function(a, b) { return b["Average Response Time"] - a["Average Response Time"]; }
+                                               : function(a, b) { return d3.ascending(a["Name"], b["Name"]); })
+                                     .map(function(d) { return d["Name"]; }))
+                   .copy();
+                   
+                   svg.selectAll(".bar")
+                   .sort(function(a, b) { return x0(a["Name"]) - x0(b["Name"]); });
+                   
+                   var transition = svg.transition().duration(750),
+                   delay = function(d, i) { return i * 50; };
+                   
+                   transition.selectAll(".bar")
+                   .delay(delay)
+                   .attr("x", function(d) { return x0(d["Name"]); });
+                   
+                   transition.select(".x.axis")
+                   .call(xAxis)
+                   .selectAll("text")
+                   .style("text-anchor","end")
+                   .attr("dx","-1.2em")
+                   .attr("dy","-0.7em")
+                   .selectAll("g")
+                   .delay(delay);
+                   }
+                   
+                   
                 });
                 
                 function type(d) {
                     d["Average Response Time"] = +d["Average Response Time"];
                     return d;
                 }
-               
+        
+        function update_to_neighborhoods(){
+            
+            
+            d3.csv("../resources/summarized_neighborhood.csv", type, function(error, data){
+                   
+                   x.domain(data.map(function(d) { return d["Name"];}));
+                   y.domain([0, d3.max(data, function(d) { return d["Average Response Time"];})]);
+                   
+                   svg.select(".x").call(xAxis).selectAll("text")
+                   .style("text-anchor","end")
+                   .attr("dx","-1.2em")
+                   .attr("dy","-0.7em")
+                   .attr("transform","rotate(-90)");
+                   svg.select(".y").call(yAxis);
+                   
+                   var sel = svg.selectAll(".bar").data(data);
+                   
+                   sel.enter().append("rect").attr("class", "bar");
+
+                   sel.transition()
+                   .attr("x", function(d) { return x(d["Name"]); })
+                   .attr("width", x.rangeBand())
+                   .attr("y", function(d) { return y(d["Average Response Time"]); })
+                   .attr("height", function(d) { return height - y(d["Average Response Time"]); });
+                   sel.exit().remove();
+                   
+                   d3.select("#des").on("click", changedes);
+                   
+                   function changedes() {
+                   
+                   // Copy-on-write since tweens are evaluated after a delay.
+                   var x0 = x.domain(data.sort(this.checked
+                                               ? function(a, b) { return b["Average Response Time"] - a["Average Response Time"]; }
+                                               : function(a, b) { return d3.ascending(a["Name"], b["Name"]); })
+                                     .map(function(d) { return d["Name"]; }))
+                   .copy();
+                   
+                   svg.selectAll(".bar")
+                   .sort(function(a, b) { return x0(a["Name"]) - x0(b["Name"]); });
+                   
+                   var transition = svg.transition().duration(750),
+                   delay = function(d, i) { return i * 50; };
+                   
+                   transition.selectAll(".bar")
+                   .delay(delay)
+                   .attr("x", function(d) { return x0(d["Name"]); });
+                   
+                   transition.select(".x.axis")
+                   .call(xAxis)
+                   .selectAll("text")
+                   .style("text-anchor","end")
+                   .attr("dx","-1.2em")
+                   .attr("dy","-0.7em")
+                   .selectAll("g")
+                   .delay(delay);
+                   }
+                   
+                   
+                   
+                   });
+                   
+                   
+        }
+        
+        function update_to_police_districts(){
+            d3.csv("../resources/summarized_police_district.csv", type, function(error, data){
+                   
+                   x.domain(data.map(function(d) { return d["Police District"];}));
+                   y.domain([0, d3.max(data, function(d) { return d["Average Response Time"];})]);
+                   
+                   svg.select(".x").call(xAxis).selectAll("text")
+                   .style("text-anchor","end")
+                   .attr("dx","-1.2em")
+                   .attr("dy","-0.7em")
+                   .attr("transform","rotate(-90)");
+                   svg.select(".y").call(yAxis);
+                   
+                   var sel = svg.selectAll(".bar").data(data);
+                   
+                   //sel.enter().append("rect").attr("class", "bar");
+
+                   sel.transition()
+                   .attr("x", function(d) { return x(d["Police District"]); })
+                   .attr("width", x.rangeBand())
+                   .attr("y", function(d) { return y(d["Average Response Time"]); })
+                   .attr("height", function(d) { return height - y(d["Average Response Time"]); });
+                   
+                   sel.exit().remove();
+                   
+                   d3.select("#des").on("click", changedes);
+                   
+                   function changedes() {
+                   
+                   // Copy-on-write since tweens are evaluated after a delay.
+                   var x0 = x.domain(data.sort(this.checked
+                                               ? function(a, b) { return b["Average Response Time"] - a["Average Response Time"]; }
+                                               : function(a, b) { return d3.ascending(a["Police District"], b["Police District"]); })
+                                     .map(function(d) { return d["Police District"]; }))
+                   .copy();
+                   
+                   svg.selectAll(".bar")
+                   .sort(function(a, b) { return x0(a["Police District"]) - x0(b["Police District"]); });
+                   
+                   var transition = svg.transition().duration(750),
+                   delay = function(d, i) { return i * 50; };
+                   
+                   transition.selectAll(".bar")
+                   .delay(delay)
+                   .attr("x", function(d) { return x0(d["Police District"]); });
+                   
+                   transition.select(".x.axis")
+                   .call(xAxis)
+                   .selectAll("text")
+                   .style("text-anchor","end")
+                   .attr("dx","-1.2em")
+                   .attr("dy","-0.7em")
+                   .selectAll("g")
+                   .delay(delay);
+                   }
+                   
+                   
+                   });
+                   
+        }
+        
         
         
         </script>
+        
+        
+        <button onclick="update_to_neighborhoods()">Neighborhoods</button>
+        <button onclick="update_to_police_districts()">Police Districts</button>
+        
     </body>
