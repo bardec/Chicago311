@@ -1,260 +1,617 @@
-SSA,Type of Service Request,Percentage of Total
-56,Pothole in Street,0.1019786910197869
-56,Abandoned Vehicle Complaint,0.0700152207001522
-56,Graffiti Removal,0.273972602739726
-56,Garbage Cart Black Maintenance/Replacement,0.1598173515981735
-56,Pot Hole in Street,0.3942161339421613
-42,Pothole in Street,0.21110779337115557
-42,Abandoned Vehicle Complaint,0.08569722305165721
-42,Graffiti Removal,0.0904747685876381
-42,Garbage Cart Black Maintenance/Replacement,0.15497163332338013
-42,Pot Hole in Street,0.457748581666169
-43,Pothole in Street,0.059282925097621585
-43,Abandoned Vehicle Complaint,0.06673766418175364
-43,Graffiti Removal,0.6192758253461129
-43,Garbage Cart Black Maintenance/Replacement,0.09034433794817182
-43,Pot Hole in Street,0.1643592474263401
-60,Pothole in Street,0.046133567662565905
-60,Abandoned Vehicle Complaint,0.05008787346221441
-60,Graffiti Removal,0.765597539543058
-60,Garbage Cart Black Maintenance/Replacement,0.0528705330990041
-60,Pot Hole in Street,0.08531048623315758
-61,Pothole in Street,0.15512465373961218
-61,Abandoned Vehicle Complaint,0.08587257617728532
-61,Graffiti Removal,0.3785780240073869
-61,Garbage Cart Black Maintenance/Replacement,0.05632502308402586
-61,Pot Hole in Street,0.32409972299168976
-62,Pothole in Street,0.17209302325581396
-62,Abandoned Vehicle Complaint,0.14418604651162792
-62,Graffiti Removal,0.17674418604651163
-62,Garbage Cart Black Maintenance/Replacement,0.027906976744186046
-62,Pot Hole in Street,0.4790697674418605
-63,Pothole in Street,0.06085083467959074
-63,Abandoned Vehicle Complaint,0.10608508346795907
-63,Graffiti Removal,0.20786214324178784
-63,Garbage Cart Black Maintenance/Replacement,0.5363489499192245
-63,Pot Hole in Street,0.0888529886914378
-64,Pothole in Street,0.09047619047619047
-64,Abandoned Vehicle Complaint,0.0380952380952381
-64,Graffiti Removal,0.10952380952380952
-64,Garbage Cart Black Maintenance/Replacement,0.37142857142857144
-64,Pot Hole in Street,0.3904761904761905
-52,Pothole in Street,0.07352941176470588
-52,Abandoned Vehicle Complaint,0.1213235294117647
-52,Graffiti Removal,0.11580882352941177
-52,Garbage Cart Black Maintenance/Replacement,0.18933823529411764
-52,Pot Hole in Street,0.5
-24,Pothole in Street,0.0748
-24,Abandoned Vehicle Complaint,0.081
-24,Graffiti Removal,0.5592
-24,Garbage Cart Black Maintenance/Replacement,0.0314
-24,Pot Hole in Street,0.2536
-25,Pothole in Street,0.031296689470787134
-25,Abandoned Vehicle Complaint,0.02461272312652355
-25,Graffiti Removal,0.820869701973736
-25,Garbage Cart Black Maintenance/Replacement,0.05528033341196823
-25,Pot Hole in Street,0.06794055201698514
-26,Pothole in Street,0.06626806178375685
-26,Abandoned Vehicle Complaint,0.0719149642916459
-26,Graffiti Removal,0.6485633615678459
-26,Garbage Cart Black Maintenance/Replacement,0.03753529314067431
-26,Pot Hole in Street,0.17571831921607706
-27,Pothole in Street,0.13629201680672268
-27,Abandoned Vehicle Complaint,0.07471113445378151
-27,Graffiti Removal,0.4575892857142857
-27,Garbage Cart Black Maintenance/Replacement,0.1135766806722689
-27,Pot Hole in Street,0.21783088235294118
-20,Pothole in Street,0.1971595655806182
-20,Abandoned Vehicle Complaint,0.04678362573099415
-20,Graffiti Removal,0.0910609857978279
-20,Garbage Cart Black Maintenance/Replacement,0.20634920634920634
-20,Pot Hole in Street,0.45864661654135336
-21,Pothole in Street,0.07813422554615233
-21,Abandoned Vehicle Complaint,0.05018697106868727
-21,Graffiti Removal,0.6760480220429049
-21,Garbage Cart Black Maintenance/Replacement,0.06730958472741587
-21,Pot Hole in Street,0.1283211966148396
-22,Pothole in Street,0.1179372197309417
-22,Abandoned Vehicle Complaint,0.10403587443946188
-22,Graffiti Removal,0.5080717488789238
-22,Garbage Cart Black Maintenance/Replacement,0.09820627802690583
-22,Pot Hole in Street,0.1717488789237668
-49,Pothole in Street,0.1468760222440301
-49,Abandoned Vehicle Complaint,0.1069676153091266
-49,Graffiti Removal,0.09649983644095518
-49,Garbage Cart Black Maintenance/Replacement,0.2904808635917566
-49,Pot Hole in Street,0.3591756624141315
-47,Pothole in Street,0.14224137931034483
-47,Abandoned Vehicle Complaint,0.17025862068965517
-47,Graffiti Removal,0.1320043103448276
-47,Garbage Cart Black Maintenance/Replacement,0.2192887931034483
-47,Pot Hole in Street,0.33620689655172414
-44,Pothole in Street,0.24074074074074073
-44,Abandoned Vehicle Complaint,0.027777777777777776
-44,Graffiti Removal,0.05787037037037037
-44,Garbage Cart Black Maintenance/Replacement,0.21064814814814814
-44,Pot Hole in Street,0.46296296296296297
-45,Pothole in Street,0.1467772814294831
-45,Abandoned Vehicle Complaint,0.06892150606253988
-45,Graffiti Removal,0.018506700701978303
-45,Garbage Cart Black Maintenance/Replacement,0.32865347798340777
-45,Pot Hole in Street,0.43714103382259095
-28,Pothole in Street,0.08815719596388741
-28,Abandoned Vehicle Complaint,0.08550185873605948
-28,Graffiti Removal,0.5841741901221456
-28,Garbage Cart Black Maintenance/Replacement,0.0807222517259692
-28,Pot Hole in Street,0.1614445034519384
-29,Pothole in Street,0.07200488997555012
-29,Abandoned Vehicle Complaint,0.054645476772616136
-29,Graffiti Removal,0.6809290953545232
-29,Garbage Cart Black Maintenance/Replacement,0.09474327628361859
-29,Pot Hole in Street,0.09767726161369193
-40,Pothole in Street,0.12074303405572756
-40,Abandoned Vehicle Complaint,0.053663570691434466
-40,Graffiti Removal,0.239422084623323
-40,Garbage Cart Black Maintenance/Replacement,0.2579979360165119
-40,Pot Hole in Street,0.3281733746130031
-41,Pothole in Street,0.13151750972762646
-41,Abandoned Vehicle Complaint,0.08949416342412451
-41,Graffiti Removal,0.05291828793774319
-41,Garbage Cart Black Maintenance/Replacement,0.3961089494163424
-41,Pot Hole in Street,0.3299610894941634
-1,Pothole in Street,0.10865290068829891
-1,Abandoned Vehicle Complaint,0.010816125860373648
-1,Graffiti Removal,0.700589970501475
-1,Garbage Cart Black Maintenance/Replacement,0.0004916420845624386
-1,Pot Hole in Street,0.17944936086529006
-3,Pothole in Street,0.07890822068430244
-3,Abandoned Vehicle Complaint,0.0697885000970183
-3,Graffiti Removal,0.5629002005044952
-3,Garbage Cart Black Maintenance/Replacement,0.13479076385744776
-3,Pot Hole in Street,0.1536123148567363
-2,Pothole in Street,0.05504587155963303
-2,Abandoned Vehicle Complaint,0.03827902562480228
-2,Graffiti Removal,0.6915533059158494
-2,Garbage Cart Black Maintenance/Replacement,0.08320151850680164
-2,Pot Hole in Street,0.13192027839291365
-5,Pothole in Street,0.0663771712158809
-5,Abandoned Vehicle Complaint,0.021712158808933003
-5,Graffiti Removal,0.5899503722084367
-5,Garbage Cart Black Maintenance/Replacement,0.11786600496277916
-5,Pot Hole in Street,0.20409429280397023
-4,Pothole in Street,0.1553398058252427
-4,Abandoned Vehicle Complaint,0.03559870550161812
-4,Graffiti Removal,0.07551240560949299
-4,Garbage Cart Black Maintenance/Replacement,0.28047464940668826
-4,Pot Hole in Street,0.45307443365695793
-7,Pothole in Street,0.026690391459074734
-7,Abandoned Vehicle Complaint,0.0017793594306049821
-7,Graffiti Removal,0.905693950177936
-7,Garbage Cart Black Maintenance/Replacement,0.0035587188612099642
-7,Pot Hole in Street,0.06227758007117438
-8,Pothole in Street,0.10456915056731064
-8,Abandoned Vehicle Complaint,0.09506286415210058
-8,Graffiti Removal,0.4697945415516713
-8,Garbage Cart Black Maintenance/Replacement,0.07083716651333946
-8,Pot Hole in Street,0.25973627721557807
-39,Pothole in Street,0.0298417894162575
-39,Abandoned Vehicle Complaint,0.025804691762138572
-39,Graffiti Removal,0.851936715766503
-39,Garbage Cart Black Maintenance/Replacement,0.03366066557555919
-39,Pot Hole in Street,0.05875613747954173
-32,Pothole in Street,0.13616838487972507
-32,Abandoned Vehicle Complaint,0.09536082474226804
-32,Graffiti Removal,0.0627147766323024
-32,Garbage Cart Black Maintenance/Replacement,0.39776632302405496
-32,Pot Hole in Street,0.3079896907216495
-14,Pothole in Street,0.10214168039538715
-14,Abandoned Vehicle Complaint,0.11696869851729819
-14,Graffiti Removal,0.14808713161266704
-14,Garbage Cart Black Maintenance/Replacement,0.4065531759106718
-14,Pot Hole in Street,0.22624931356397585
-10,Pothole in Street,0.0794846864365581
-10,Abandoned Vehicle Complaint,0.03232863393291201
-10,Graffiti Removal,0.6011181332036947
-10,Garbage Cart Black Maintenance/Replacement,0.0901798736023335
-10,Pot Hole in Street,0.1968886728245017
-13,Pothole in Street,0.128099173553719
-13,Abandoned Vehicle Complaint,0.027047332832456798
-13,Graffiti Removal,0.4470323065364388
-13,Garbage Cart Black Maintenance/Replacement,0.04658151765589782
-13,Pot Hole in Street,0.3512396694214876
-38,Pothole in Street,0.06432833648668317
-38,Abandoned Vehicle Complaint,0.060980934361810506
-38,Graffiti Removal,0.6789404744578664
-38,Garbage Cart Black Maintenance/Replacement,0.07990103332848203
-38,Pot Hole in Street,0.1158492213651579
-59,Pothole in Street,0.04260064681610349
-59,Abandoned Vehicle Complaint,0.037359205977472956
-59,Graffiti Removal,0.7317943570870972
-59,Garbage Cart Black Maintenance/Replacement,0.09702241552358648
-59,Pot Hole in Street,0.09122337459573994
-48,Pothole in Street,0.0951683748169839
-48,Abandoned Vehicle Complaint,0.1259150805270864
-48,Graffiti Removal,0.4816983894582723
-48,Garbage Cart Black Maintenance/Replacement,0.0746705710102489
-48,Pot Hole in Street,0.2225475841874085
-17,Pothole in Street,0.052525252525252523
-17,Abandoned Vehicle Complaint,0.022222222222222223
-17,Graffiti Removal,0.7455988455988456
-17,Garbage Cart Black Maintenance/Replacement,0.06392496392496393
-17,Pot Hole in Street,0.11572871572871572
-16,Pothole in Street,0.15471698113207547
-16,Abandoned Vehicle Complaint,0.022641509433962263
-16,Graffiti Removal,0.6415094339622641
-16,Pot Hole in Street,0.1811320754716981
-19,Pothole in Street,0.09290248124639354
-19,Abandoned Vehicle Complaint,0.07097518753606463
-19,Graffiti Removal,0.4339296018465089
-19,Garbage Cart Black Maintenance/Replacement,0.04327755337564916
-19,Pot Hole in Street,0.35891517599538375
-18,Pothole in Street,0.11910112359550562
-18,Abandoned Vehicle Complaint,0.04868913857677903
-18,Graffiti Removal,0.5288389513108614
-18,Garbage Cart Black Maintenance/Replacement,0.07790262172284644
-18,Pot Hole in Street,0.2254681647940075
-31,Pothole in Street,0.05415694461500675
-31,Abandoned Vehicle Complaint,0.06287608989315976
-31,Graffiti Removal,0.7197593024683777
-31,Garbage Cart Black Maintenance/Replacement,0.06250767530394204
-31,Pot Hole in Street,0.10069998771951369
-23,Pothole in Street,0.1665773968934119
-23,Abandoned Vehicle Complaint,0.05891805034815212
-23,Graffiti Removal,0.43974290305302627
-23,Garbage Cart Black Maintenance/Replacement,0.09694697375468667
-23,Pot Hole in Street,0.2378146759507231
-51,Pothole in Street,0.140302066772655
-51,Abandoned Vehicle Complaint,0.11466613672496026
-51,Graffiti Removal,0.06279809220985691
-51,Garbage Cart Black Maintenance/Replacement,0.3404213036565978
-51,Pot Hole in Street,0.34181240063593005
-50,Pothole in Street,0.15055305202785743
-50,Abandoned Vehicle Complaint,0.0737402703809914
-50,Graffiti Removal,0.11696026218762802
-50,Garbage Cart Black Maintenance/Replacement,0.30233510856206475
-50,Pot Hole in Street,0.35641130684145844
-35,Pothole in Street,0.09462656302805002
-35,Abandoned Vehicle Complaint,0.023994592767826967
-35,Graffiti Removal,0.6931395741804663
-35,Garbage Cart Black Maintenance/Replacement,0.0682663061845218
-35,Pot Hole in Street,0.11997296383913485
-34,Pothole in Street,0.08976248976248977
-34,Abandoned Vehicle Complaint,0.07354627354627355
-34,Graffiti Removal,0.6208026208026208
-34,Garbage Cart Black Maintenance/Replacement,0.029320229320229322
-34,Pot Hole in Street,0.18656838656838656
-55,Pothole in Street,0.12009512485136742
-55,Abandoned Vehicle Complaint,0.06896551724137931
-55,Graffiti Removal,0.07372175980975029
-55,Garbage Cart Black Maintenance/Replacement,0.38882282996432815
-55,Pot Hole in Street,0.34839476813317477
-54,Pothole in Street,0.08457201435161456
-54,Abandoned Vehicle Complaint,0.04254228600717581
-54,Graffiti Removal,0.5996924654023578
-54,Garbage Cart Black Maintenance/Replacement,0.03690415171706817
-54,Pot Hole in Street,0.2362890825217837
-33,Pothole in Street,0.05504448801085809
-33,Abandoned Vehicle Complaint,0.028577891720705777
-33,Graffiti Removal,0.7935454682551651
-33,Garbage Cart Black Maintenance/Replacement,0.04791886593274016
-33,Pot Hole in Street,0.07491328608053084
+Community Area,Type of Service Request,Percentage of Total
+58,Pothole in Street,0.09310877250010158
+58,Garbage Cart Black Maintenance/Replacement,0.05887611230750477
+58,Graffiti Removal,0.665617000528219
+58,Abandoned Vehicle Complaint,0.04083539880541221
+58,Street Light Out,0.032891796351225064
+58,Tree Debris,0.009609524196497502
+58,Rodent Baiting/Rat Complaint,0.0398602251025964
+58,Tree Trim,0.05920117020844338
+56,Pothole in Street,0.23747913188647746
+56,Garbage Cart Black Maintenance/Replacement,0.0842429690509824
+56,Graffiti Removal,0.2656671375369205
+56,Abandoned Vehicle Complaint,0.05550918196994992
+56,Street Light Out,0.12604340567612687
+56,Tree Debris,0.039199948632335946
+56,Rodent Baiting/Rat Complaint,0.0315911133941184
+56,Tree Trim,0.16026711185308848
+28,Pothole in Street,0.27285579641847313
+28,Garbage Cart Black Maintenance/Replacement,0.07260249764373233
+28,Graffiti Removal,0.35320452403393027
+28,Abandoned Vehicle Complaint,0.03734684260131951
+28,Street Light Out,0.09566446748350613
+28,Tree Debris,0.013312912346842601
+28,Rodent Baiting/Rat Complaint,0.08220428840716305
+28,Tree Trim,0.07280867106503298
+29,Pothole in Street,0.18701628251215902
+29,Garbage Cart Black Maintenance/Replacement,0.25294988369634175
+29,Graffiti Removal,0.14654260943116937
+29,Abandoned Vehicle Complaint,0.04618312539648974
+29,Street Light Out,0.13047155846902095
+29,Tree Debris,0.04089659547473039
+29,Rodent Baiting/Rat Complaint,0.10928314654260943
+29,Tree Trim,0.08665679847747938
+60,Pothole in Street,0.09646926956846628
+60,Garbage Cart Black Maintenance/Replacement,0.0895572576125537
+60,Graffiti Removal,0.43990285821034936
+60,Abandoned Vehicle Complaint,0.07909583411171306
+60,Street Light Out,0.05746310480104614
+60,Tree Debris,0.022267887166075098
+60,Rodent Baiting/Rat Complaint,0.06572015692135251
+60,Tree Trim,0.14952363160844387
+61,Pothole in Street,0.1793715139138651
+61,Garbage Cart Black Maintenance/Replacement,0.12133865707580237
+61,Graffiti Removal,0.3615166570148435
+61,Abandoned Vehicle Complaint,0.04361608095339693
+61,Street Light Out,0.08238593068974977
+61,Tree Debris,0.036941083239355056
+61,Rodent Baiting/Rat Complaint,0.08659209363284465
+61,Tree Trim,0.08823798348014264
+62,Pothole in Street,0.15213457870800529
+62,Garbage Cart Black Maintenance/Replacement,0.058878184752310624
+62,Graffiti Removal,0.5163577681060199
+62,Abandoned Vehicle Complaint,0.061763411413761064
+62,Street Light Out,0.06474644236881999
+62,Tree Debris,0.018974032960046947
+62,Rodent Baiting/Rat Complaint,0.07281529659152036
+62,Tree Trim,0.05433028509951587
+63,Pothole in Street,0.11671186525016794
+63,Garbage Cart Black Maintenance/Replacement,0.07740153758117085
+63,Graffiti Removal,0.6040106486204065
+63,Abandoned Vehicle Complaint,0.03829024954594083
+63,Street Light Out,0.04373895952031448
+63,Tree Debris,0.015450451571169109
+63,Rodent Baiting/Rat Complaint,0.027542109322518847
+63,Tree Trim,0.0768541785883114
+64,Pothole in Street,0.24189737687041862
+64,Garbage Cart Black Maintenance/Replacement,0.11104379960016962
+64,Graffiti Removal,0.1649603198643
+64,Abandoned Vehicle Complaint,0.08778094141879203
+64,Street Light Out,0.16096201611437572
+64,Tree Debris,0.03883201066214333
+64,Rodent Baiting/Rat Complaint,0.10256254922154237
+64,Tree Trim,0.09196098624825831
+65,Pothole in Street,0.20446431926646874
+65,Garbage Cart Black Maintenance/Replacement,0.0965390252151366
+65,Graffiti Removal,0.3463981060463718
+65,Abandoned Vehicle Complaint,0.07557025290293487
+65,Street Light Out,0.08436360903385817
+65,Tree Debris,0.026417646837773853
+65,Rodent Baiting/Rat Complaint,0.106647626921198
+65,Tree Trim,0.05959941377625794
+66,Pothole in Street,0.15487810859861675
+66,Garbage Cart Black Maintenance/Replacement,0.16797468975327415
+66,Graffiti Removal,0.3103448275862069
+66,Abandoned Vehicle Complaint,0.05402952862118016
+66,Street Light Out,0.10673468386717025
+66,Tree Debris,0.045200372786579686
+66,Rodent Baiting/Rat Complaint,0.07257075587384117
+66,Tree Trim,0.08826703291313091
+67,Pothole in Street,0.16274354833167246
+67,Garbage Cart Black Maintenance/Replacement,0.22421909900003437
+67,Graffiti Removal,0.05092608501426068
+67,Abandoned Vehicle Complaint,0.03247311088966015
+67,Street Light Out,0.14521837737534793
+67,Tree Debris,0.09711006494622178
+67,Rodent Baiting/Rat Complaint,0.1531218858458472
+67,Tree Trim,0.13418782859695544
+68,Pothole in Street,0.17495307052829176
+68,Garbage Cart Black Maintenance/Replacement,0.2
+68,Graffiti Removal,0.06602306248323947
+68,Abandoned Vehicle Complaint,0.03818718155001341
+68,Street Light Out,0.16706891928130865
+68,Tree Debris,0.0912308930008045
+68,Rodent Baiting/Rat Complaint,0.14073478144274604
+68,Tree Trim,0.12180209171359614
+69,Pothole in Street,0.24781315982246735
+69,Garbage Cart Black Maintenance/Replacement,0.17830826905675012
+69,Graffiti Removal,0.032533287370190025
+69,Abandoned Vehicle Complaint,0.05855991726634205
+69,Street Light Out,0.16305425087258155
+69,Tree Debris,0.09656569138621968
+69,Rodent Baiting/Rat Complaint,0.07385702589735856
+69,Tree Trim,0.14930839832809067
+52,Pothole in Street,0.12784467667497745
+52,Garbage Cart Black Maintenance/Replacement,0.0893851785051191
+52,Graffiti Removal,0.4320195215107952
+52,Abandoned Vehicle Complaint,0.0498116810779269
+52,Street Light Out,0.13580181422736196
+52,Tree Debris,0.05050129966580022
+52,Rodent Baiting/Rat Complaint,0.010185136067052146
+52,Tree Trim,0.10445069227096705
+53,Pothole in Street,0.18764615756793807
+53,Garbage Cart Black Maintenance/Replacement,0.1782114345617289
+53,Graffiti Removal,0.03866623659382308
+53,Abandoned Vehicle Complaint,0.036408354164986695
+53,Street Light Out,0.1780904765744698
+53,Tree Debris,0.13599709700830578
+53,Rodent Baiting/Rat Complaint,0.03439238771066849
+53,Tree Trim,0.21058785581807918
+23,Pothole in Street,0.17162354584777412
+23,Garbage Cart Black Maintenance/Replacement,0.1941377179549179
+23,Graffiti Removal,0.24220198275167246
+23,Abandoned Vehicle Complaint,0.05813922248193224
+23,Street Light Out,0.10142124069745574
+23,Tree Debris,0.03379812471454287
+23,Rodent Baiting/Rat Complaint,0.10413476263399694
+23,Tree Trim,0.09454340291770774
+24,Pothole in Street,0.14545915846542123
+24,Garbage Cart Black Maintenance/Replacement,0.06261433893733225
+24,Graffiti Removal,0.5322285576935917
+24,Abandoned Vehicle Complaint,0.047511584120074245
+24,Street Light Out,0.050703059275975806
+24,Tree Debris,0.012418710857692257
+24,Rodent Baiting/Rat Complaint,0.08476771669315102
+24,Tree Trim,0.06429687395676152
+25,Pothole in Street,0.2224342833314622
+25,Garbage Cart Black Maintenance/Replacement,0.21444724222546552
+25,Graffiti Removal,0.06991066703019999
+25,Abandoned Vehicle Complaint,0.05416112011034306
+25,Street Light Out,0.12832191945598306
+25,Tree Debris,0.09029526390915944
+25,Rodent Baiting/Rat Complaint,0.09316610800147551
+25,Tree Trim,0.1272633959359112
+26,Pothole in Street,0.18258240542732837
+26,Garbage Cart Black Maintenance/Replacement,0.2572819113634688
+26,Graffiti Removal,0.07447828331244008
+26,Abandoned Vehicle Complaint,0.04859523633950299
+26,Street Light Out,0.1403288843005678
+26,Tree Debris,0.07595310080377553
+26,Rodent Baiting/Rat Complaint,0.11798539930683578
+26,Tree Trim,0.10279477914608068
+27,Pothole in Street,0.19959785522788204
+27,Garbage Cart Black Maintenance/Replacement,0.20904825737265414
+27,Graffiti Removal,0.11018766756032172
+27,Abandoned Vehicle Complaint,0.06474530831099196
+27,Street Light Out,0.1423592493297587
+27,Tree Debris,0.05650134048257373
+27,Rodent Baiting/Rat Complaint,0.14028150134048256
+27,Tree Trim,0.07727882037533512
+20,Pothole in Street,0.136133278965457
+20,Garbage Cart Black Maintenance/Replacement,0.0805615424943205
+20,Graffiti Removal,0.5186112891011825
+20,Abandoned Vehicle Complaint,0.05190190481738219
+20,Street Light Out,0.048406827051901906
+20,Tree Debris,0.018116153084406127
+20,Rodent Baiting/Rat Complaint,0.06011533756626085
+20,Tree Trim,0.08615366691908895
+21,Pothole in Street,0.12065504748849505
+21,Garbage Cart Black Maintenance/Replacement,0.06024184862430236
+21,Graffiti Removal,0.5628855380397533
+21,Abandoned Vehicle Complaint,0.05071967100753941
+21,Street Light Out,0.041173014785077844
+21,Tree Debris,0.01157838049544698
+21,Rodent Baiting/Rat Complaint,0.10136590619798297
+21,Tree Trim,0.05138059336140213
+22,Pothole in Street,0.15017400922653573
+22,Garbage Cart Black Maintenance/Replacement,0.05637089594518035
+22,Graffiti Removal,0.517198586343648
+22,Abandoned Vehicle Complaint,0.04509401893867861
+22,Street Light Out,0.04355626298324655
+22,Tree Debris,0.01700973912105107
+22,Rodent Baiting/Rat Complaint,0.11205384843661478
+22,Tree Trim,0.058542639005044916
+49,Pothole in Street,0.18274125796311236
+49,Garbage Cart Black Maintenance/Replacement,0.19053050324088242
+49,Graffiti Removal,0.02793000806743261
+49,Abandoned Vehicle Complaint,0.046429465602136476
+49,Street Light Out,0.18210142710100982
+49,Tree Debris,0.1406793334631541
+49,Rodent Baiting/Rat Complaint,0.04670765293348541
+49,Tree Trim,0.18288035162878682
+46,Pothole in Street,0.16592071611253198
+46,Garbage Cart Black Maintenance/Replacement,0.14701315308732188
+46,Graffiti Removal,0.16281512605042017
+46,Abandoned Vehicle Complaint,0.04594446474241871
+46,Street Light Out,0.16477895506028498
+46,Tree Debris,0.09106686152721959
+46,Rodent Baiting/Rat Complaint,0.03347643405188162
+46,Tree Trim,0.18898428936792108
+47,Pothole in Street,0.23828647925033467
+47,Garbage Cart Black Maintenance/Replacement,0.1923248549754574
+47,Graffiti Removal,0.022311468094600623
+47,Abandoned Vehicle Complaint,0.041499330655957165
+47,Street Light Out,0.16644355198572067
+47,Tree Debris,0.08879964301651048
+47,Rodent Baiting/Rat Complaint,0.053993752788933515
+47,Tree Trim,0.1963409192324855
+44,Pothole in Street,0.22498581426139588
+44,Garbage Cart Black Maintenance/Replacement,0.18086816720257234
+44,Graffiti Removal,0.02279175335729147
+44,Abandoned Vehicle Complaint,0.07168526574616985
+44,Street Light Out,0.20484206544354075
+44,Tree Debris,0.09693588046150936
+44,Rodent Baiting/Rat Complaint,0.04038206922640439
+44,Tree Trim,0.15750898430111596
+45,Pothole in Street,0.24417470467107402
+45,Garbage Cart Black Maintenance/Replacement,0.19432101441421915
+45,Graffiti Removal,0.023951446840793325
+45,Abandoned Vehicle Complaint,0.04389292294353528
+45,Street Light Out,0.17167009862360463
+45,Tree Debris,0.13373794299338898
+45,Rodent Baiting/Rat Complaint,0.033163541779559984
+45,Tree Trim,0.15508832773382464
+42,Pothole in Street,0.25166970248937465
+42,Garbage Cart Black Maintenance/Replacement,0.13833232139243068
+42,Graffiti Removal,0.05849018417324428
+42,Abandoned Vehicle Complaint,0.08844363489172233
+42,Street Light Out,0.17233353572151386
+42,Tree Debris,0.07245496862983201
+42,Rodent Baiting/Rat Complaint,0.07235377453956689
+42,Tree Trim,0.14592187816231533
+43,Pothole in Street,0.27501539724902485
+43,Garbage Cart Black Maintenance/Replacement,0.14313282693492096
+43,Graffiti Removal,0.05469102853623486
+43,Abandoned Vehicle Complaint,0.06245124204475467
+43,Street Light Out,0.1786902073496202
+43,Tree Debris,0.08335044138780538
+43,Rodent Baiting/Rat Complaint,0.05752412235680558
+43,Tree Trim,0.1451447341408335
+40,Pothole in Street,0.374632425014703
+40,Garbage Cart Black Maintenance/Replacement,0.08155263673789453
+40,Graffiti Removal,0.07312291707508331
+40,Abandoned Vehicle Complaint,0.04920603803175848
+40,Street Light Out,0.17016271319349147
+40,Tree Debris,0.05704763771809449
+40,Rodent Baiting/Rat Complaint,0.0707704371691825
+40,Tree Trim,0.1235051950597922
+41,Pothole in Street,0.30827519846042817
+41,Garbage Cart Black Maintenance/Replacement,0.06976184748616791
+41,Graffiti Removal,0.1139042578782776
+41,Abandoned Vehicle Complaint,0.05881645417368295
+41,Street Light Out,0.1297810921337503
+41,Tree Debris,0.03199422660572528
+41,Rodent Baiting/Rat Complaint,0.09333654077459706
+41,Tree Trim,0.1941303824873707
+1,Pothole in Street,0.29370194921177295
+1,Garbage Cart Black Maintenance/Replacement,0.039527840335481866
+1,Graffiti Removal,0.3489166731381533
+1,Abandoned Vehicle Complaint,0.07113458103595557
+1,Street Light Out,0.04686650617379824
+1,Tree Debris,0.03180088529937097
+1,Rodent Baiting/Rat Complaint,0.08639434650928011
+1,Tree Trim,0.081657218296187
+3,Pothole in Street,0.1910845047837939
+3,Garbage Cart Black Maintenance/Replacement,0.030840771821048694
+3,Graffiti Removal,0.4154150408894115
+3,Abandoned Vehicle Complaint,0.06387300229835907
+3,Street Light Out,0.06424715377625742
+3,Tree Debris,0.021861136351488588
+3,Rodent Baiting/Rat Complaint,0.1029451066331712
+3,Tree Trim,0.10973328344646961
+2,Pothole in Street,0.2168141592920354
+2,Garbage Cart Black Maintenance/Replacement,0.08676883229009281
+2,Graffiti Removal,0.252212389380531
+2,Abandoned Vehicle Complaint,0.06505503993093029
+2,Street Light Out,0.06114828404921217
+2,Tree Debris,0.04072954888840924
+2,Rodent Baiting/Rat Complaint,0.15689617958126484
+2,Tree Trim,0.12037556658752428
+5,Pothole in Street,0.13702175281527593
+5,Garbage Cart Black Maintenance/Replacement,0.08071623417500175
+5,Graffiti Removal,0.38494089669161363
+5,Abandoned Vehicle Complaint,0.056060712037490384
+5,Street Light Out,0.048541652094845074
+5,Tree Debris,0.025809610407777857
+5,Rodent Baiting/Rat Complaint,0.1495768343009023
+5,Tree Trim,0.1173323074770931
+4,Pothole in Street,0.15948723457585848
+4,Garbage Cart Black Maintenance/Replacement,0.06438213914849429
+4,Graffiti Removal,0.40752676621190964
+4,Abandoned Vehicle Complaint,0.05661188097540015
+4,Street Light Out,0.05102588892469653
+4,Tree Debris,0.024528234325204998
+4,Rodent Baiting/Rat Complaint,0.08547283990403552
+4,Tree Trim,0.1509650159344004
+7,Pothole in Street,0.2246964727544738
+7,Garbage Cart Black Maintenance/Replacement,0.06838713389723229
+7,Graffiti Removal,0.2892859197882502
+7,Abandoned Vehicle Complaint,0.03412164106105069
+7,Street Light Out,0.05788595431267622
+7,Tree Debris,0.013176822601990908
+7,Rodent Baiting/Rat Complaint,0.21652569192703838
+7,Tree Trim,0.09592036365728752
+6,Pothole in Street,0.18316930664474707
+6,Garbage Cart Black Maintenance/Replacement,0.05898296047808411
+6,Graffiti Removal,0.3402128274054162
+6,Abandoned Vehicle Complaint,0.040255037433630285
+6,Street Light Out,0.05476195765667696
+6,Tree Debris,0.013773798680381224
+6,Rodent Baiting/Rat Complaint,0.1790593828449559
+6,Tree Trim,0.12978472885610823
+9,Pothole in Street,0.31893404721343394
+9,Garbage Cart Black Maintenance/Replacement,0.15831102458018984
+9,Graffiti Removal,0.019347773180822585
+9,Abandoned Vehicle Complaint,0.042711121927476274
+9,Street Light Out,0.11146264297882696
+9,Tree Debris,0.11657337551715746
+9,Rodent Baiting/Rat Complaint,0.03747870528109029
+9,Tree Trim,0.19518130932100267
+8,Pothole in Street,0.338361496947713
+8,Garbage Cart Black Maintenance/Replacement,0.025081836680527294
+8,Graffiti Removal,0.37751039547022913
+8,Abandoned Vehicle Complaint,0.02778023533575157
+8,Street Light Out,0.08595063257542246
+8,Tree Debris,0.004600548526939751
+8,Rodent Baiting/Rat Complaint,0.09745200389277182
+8,Tree Trim,0.04326285057064496
+18,Pothole in Street,0.21824516946468167
+18,Garbage Cart Black Maintenance/Replacement,0.13082039911308205
+18,Graffiti Removal,0.1518319079294689
+18,Abandoned Vehicle Complaint,0.0951325097666561
+18,Street Light Out,0.09069791996621265
+18,Tree Debris,0.056065885334178014
+18,Rodent Baiting/Rat Complaint,0.1281807623271038
+18,Tree Trim,0.12902544609861683
+39,Pothole in Street,0.2521795989537925
+39,Garbage Cart Black Maintenance/Replacement,0.14603312990409764
+39,Graffiti Removal,0.07192676547515257
+39,Abandoned Vehicle Complaint,0.10941586748038361
+39,Street Light Out,0.13469921534437662
+39,Tree Debris,0.06473408892763731
+39,Rodent Baiting/Rat Complaint,0.07737576285963382
+39,Tree Trim,0.1436355710549259
+77,Pothole in Street,0.2436063590806981
+77,Garbage Cart Black Maintenance/Replacement,0.05015552099533437
+77,Graffiti Removal,0.30970278209780544
+77,Abandoned Vehicle Complaint,0.07732849490236737
+77,Street Light Out,0.056246759979263865
+77,Tree Debris,0.03209780542595472
+77,Rodent Baiting/Rat Complaint,0.08817176429929152
+77,Tree Trim,0.1426905132192846
+76,Pothole in Street,0.4497622820919176
+76,Garbage Cart Black Maintenance/Replacement,0.10839936608557844
+76,Graffiti Removal,0.06782884310618066
+76,Abandoned Vehicle Complaint,0.0716323296354992
+76,Street Light Out,0.14199683042789224
+76,Tree Debris,0.042155309033280505
+76,Rodent Baiting/Rat Complaint,0.02377179080824089
+76,Tree Trim,0.09445324881141046
+75,Pothole in Street,0.19435301378317218
+75,Garbage Cart Black Maintenance/Replacement,0.1651923472536515
+75,Graffiti Removal,0.01074881711581979
+75,Abandoned Vehicle Complaint,0.02607488171158198
+75,Street Light Out,0.1739868339847768
+75,Tree Debris,0.2241308372762806
+75,Rodent Baiting/Rat Complaint,0.03769800452581773
+75,Tree Trim,0.1678152643488994
+12,Pothole in Street,0.31700680272108844
+12,Garbage Cart Black Maintenance/Replacement,0.1374797538062844
+12,Graffiti Removal,0.05966958211856171
+12,Abandoned Vehicle Complaint,0.047619047619047616
+12,Street Light Out,0.09523809523809523
+12,Tree Debris,0.10728862973760933
+12,Rodent Baiting/Rat Complaint,0.04859086491739553
+12,Tree Trim,0.18710722384191772
+73,Pothole in Street,0.216657431482034
+73,Garbage Cart Black Maintenance/Replacement,0.19884062912919312
+73,Graffiti Removal,0.011636332637142493
+73,Abandoned Vehicle Complaint,0.043519031584331444
+73,Street Light Out,0.19943736413622606
+73,Tree Debris,0.10915988235795576
+73,Rodent Baiting/Rat Complaint,0.03964025403861728
+73,Tree Trim,0.1811090746344998
+72,Pothole in Street,0.24705658944170147
+72,Garbage Cart Black Maintenance/Replacement,0.1428028864413217
+72,Graffiti Removal,0.017612988985947587
+72,Abandoned Vehicle Complaint,0.016616027345233573
+72,Street Light Out,0.1449867071781238
+72,Tree Debris,0.2350930497531333
+72,Rodent Baiting/Rat Complaint,0.017565514622104064
+72,Tree Trim,0.17826623623243448
+71,Pothole in Street,0.21059282765592968
+71,Garbage Cart Black Maintenance/Replacement,0.21533881883793424
+71,Graffiti Removal,0.02446010839956191
+71,Abandoned Vehicle Complaint,0.05038052177820214
+71,Street Light Out,0.17254064983571568
+71,Tree Debris,0.08840461681035693
+71,Rodent Baiting/Rat Complaint,0.08680389789098261
+71,Tree Trim,0.1514785587913168
+70,Pothole in Street,0.1861988376026323
+70,Garbage Cart Black Maintenance/Replacement,0.16085980503705527
+70,Graffiti Removal,0.1558165995264307
+70,Abandoned Vehicle Complaint,0.046834158491958544
+70,Street Light Out,0.1478827762231311
+70,Tree Debris,0.08638026999600233
+70,Rodent Baiting/Rat Complaint,0.0733724899289646
+70,Tree Trim,0.14265506319382515
+15,Pothole in Street,0.1673045827619379
+15,Garbage Cart Black Maintenance/Replacement,0.11146816218760873
+15,Graffiti Removal,0.28714411445647503
+15,Abandoned Vehicle Complaint,0.08066397854964488
+15,Street Light Out,0.09900321345968847
+15,Tree Debris,0.0495732443662116
+15,Rodent Baiting/Rat Complaint,0.08389790613422846
+15,Tree Trim,0.12094479808420493
+14,Pothole in Street,0.15769267079963495
+14,Garbage Cart Black Maintenance/Replacement,0.06485823079585865
+14,Graffiti Removal,0.47660257418887875
+14,Abandoned Vehicle Complaint,0.05557478679548101
+14,Street Light Out,0.04144507033388929
+14,Tree Debris,0.020580923309311765
+14,Rodent Baiting/Rat Complaint,0.09343235673600403
+14,Tree Trim,0.08981338704094156
+11,Pothole in Street,0.2382106654914059
+11,Garbage Cart Black Maintenance/Replacement,0.12411855442926399
+11,Graffiti Removal,0.1514984574702512
+11,Abandoned Vehicle Complaint,0.1002644336712208
+11,Street Light Out,0.08516967827236668
+11,Tree Debris,0.06104010577346849
+11,Rodent Baiting/Rat Complaint,0.053217276333186424
+11,Tree Trim,0.1864808285588365
+10,Pothole in Street,0.290192470987829
+10,Garbage Cart Black Maintenance/Replacement,0.1528446079818851
+10,Graffiti Removal,0.04404896688366827
+10,Abandoned Vehicle Complaint,0.050983583356920464
+10,Street Light Out,0.10992782337956411
+10,Tree Debris,0.11070619869799038
+10,Rodent Baiting/Rat Complaint,0.05285876026040193
+10,Tree Trim,0.18843758845174072
+13,Pothole in Street,0.2468445317814224
+13,Garbage Cart Black Maintenance/Replacement,0.09568437759806515
+13,Graffiti Removal,0.2299145945128864
+13,Abandoned Vehicle Complaint,0.07255687400801149
+13,Street Light Out,0.07028947169526113
+13,Tree Debris,0.04534804625500718
+13,Rodent Baiting/Rat Complaint,0.10724812939309199
+13,Tree Trim,0.13211397475625425
+38,Pothole in Street,0.23268593083846517
+38,Garbage Cart Black Maintenance/Replacement,0.12846991946944575
+38,Graffiti Removal,0.07333017527238275
+38,Abandoned Vehicle Complaint,0.07910942681193747
+38,Street Light Out,0.0974893415442918
+38,Tree Debris,0.08915206063477026
+38,Rodent Baiting/Rat Complaint,0.10667929891046897
+38,Tree Trim,0.1930838465182378
+59,Pothole in Street,0.09862447882164985
+59,Garbage Cart Black Maintenance/Replacement,0.04913688968553949
+59,Graffiti Removal,0.6720570471106262
+59,Abandoned Vehicle Complaint,0.04336983205392978
+59,Street Light Out,0.03506994505708608
+59,Tree Debris,0.01332657912169271
+59,Rodent Baiting/Rat Complaint,0.03222538284690021
+59,Tree Trim,0.056189845302575696
+48,Pothole in Street,0.20263969586112904
+48,Garbage Cart Black Maintenance/Replacement,0.15414963058604117
+48,Graffiti Removal,0.05286564808837243
+48,Abandoned Vehicle Complaint,0.04232121081701456
+48,Street Light Out,0.21067355282978265
+48,Tree Debris,0.09195896994476724
+48,Rodent Baiting/Rat Complaint,0.032781005666738396
+48,Tree Trim,0.21261028620615452
+17,Pothole in Street,0.21164525350770544
+17,Garbage Cart Black Maintenance/Replacement,0.1595964906515953
+17,Graffiti Removal,0.10554332468044557
+17,Abandoned Vehicle Complaint,0.09673709460125522
+17,Street Light Out,0.11572963559294187
+17,Tree Debris,0.053560279959254754
+17,Rodent Baiting/Rat Complaint,0.06062497946308284
+17,Tree Trim,0.19656294154371898
+16,Pothole in Street,0.15641786258317966
+16,Garbage Cart Black Maintenance/Replacement,0.07123386514872124
+16,Graffiti Removal,0.4381664395093402
+16,Abandoned Vehicle Complaint,0.0750020043293514
+16,Street Light Out,0.05473823458670729
+16,Tree Debris,0.026998316363344824
+16,Rodent Baiting/Rat Complaint,0.09123707207568348
+16,Tree Trim,0.08620620540367194
+19,Pothole in Street,0.15444206362287785
+19,Garbage Cart Black Maintenance/Replacement,0.09530245590901598
+19,Graffiti Removal,0.48399538486896326
+19,Abandoned Vehicle Complaint,0.05358496785890885
+19,Street Light Out,0.05836492500412065
+19,Tree Debris,0.02236690291742212
+19,Rodent Baiting/Rat Complaint,0.05810120323059172
+19,Tree Trim,0.07384209658809955
+54,Pothole in Street,0.43084192439862545
+54,Garbage Cart Black Maintenance/Replacement,0.0975085910652921
+54,Graffiti Removal,0.015034364261168385
+54,Abandoned Vehicle Complaint,0.03049828178694158
+54,Street Light Out,0.17482817869415807
+54,Tree Debris,0.15163230240549827
+54,Rodent Baiting/Rat Complaint,0.01245704467353952
+54,Tree Trim,0.08719931271477663
+57,Pothole in Street,0.107058873829578
+57,Garbage Cart Black Maintenance/Replacement,0.0444653469579717
+57,Graffiti Removal,0.6804053187395784
+57,Abandoned Vehicle Complaint,0.040018812262174526
+57,Street Light Out,0.03736799350121852
+57,Tree Debris,0.00808072170678524
+57,Rodent Baiting/Rat Complaint,0.03574329813160033
+57,Tree Trim,0.04685963487109325
+30,Pothole in Street,0.09255781194975936
+30,Garbage Cart Black Maintenance/Replacement,0.05599248738114802
+30,Graffiti Removal,0.6840738349571546
+30,Abandoned Vehicle Complaint,0.026455569902570725
+30,Street Light Out,0.045985444300974294
+30,Tree Debris,0.011254255194271628
+30,Rodent Baiting/Rat Complaint,0.026969127831905155
+30,Tree Trim,0.05671146848221622
+51,Pothole in Street,0.2028264331210191
+51,Garbage Cart Black Maintenance/Replacement,0.13899946921443737
+51,Graffiti Removal,0.16268577494692144
+51,Abandoned Vehicle Complaint,0.030453821656050956
+51,Street Light Out,0.1726380042462845
+51,Tree Debris,0.14742569002123143
+51,Rodent Baiting/Rat Complaint,0.024217091295116774
+51,Tree Trim,0.12075371549893843
+36,Pothole in Street,0.23053120165033522
+36,Garbage Cart Black Maintenance/Replacement,0.10056730273336771
+36,Graffiti Removal,0.06034038164002063
+36,Abandoned Vehicle Complaint,0.09231562661165549
+36,Street Light Out,0.111397627643115
+36,Tree Debris,0.05415162454873646
+36,Rodent Baiting/Rat Complaint,0.04744713769984528
+36,Tree Trim,0.30324909747292417
+35,Pothole in Street,0.3286551785397051
+35,Garbage Cart Black Maintenance/Replacement,0.08385148338958963
+35,Graffiti Removal,0.08083140877598152
+35,Abandoned Vehicle Complaint,0.06022384082430272
+35,Street Light Out,0.13501510037306805
+35,Tree Debris,0.03535263812400071
+35,Rodent Baiting/Rat Complaint,0.05720376621069462
+35,Tree Trim,0.21886658376265766
+34,Pothole in Street,0.26346356916578667
+34,Garbage Cart Black Maintenance/Replacement,0.07470960929250264
+34,Graffiti Removal,0.32906546990496305
+34,Abandoned Vehicle Complaint,0.046594508975712774
+34,Street Light Out,0.12420802534318902
+34,Tree Debris,0.006863780359028511
+34,Rodent Baiting/Rat Complaint,0.04923442449841605
+34,Tree Trim,0.10586061246040127
+33,Pothole in Street,0.24010627884212
+33,Garbage Cart Black Maintenance/Replacement,0.05663543560341211
+33,Graffiti Removal,0.3283456859180534
+33,Abandoned Vehicle Complaint,0.025730667039574884
+33,Street Light Out,0.08600195776814432
+33,Tree Debris,0.006712347923367361
+33,Rodent Baiting/Rat Complaint,0.09649000139840581
+33,Tree Trim,0.1599776255069221
+55,Pothole in Street,0.20217539089055064
+55,Garbage Cart Black Maintenance/Replacement,0.10061182868796736
+55,Graffiti Removal,0.17199184228416042
+55,Abandoned Vehicle Complaint,0.03657375934738273
+55,Street Light Out,0.18422841604350781
+55,Tree Debris,0.08728755948334466
+55,Rodent Baiting/Rat Complaint,0.009925220938137322
+55,Tree Trim,0.20720598232494902
+74,Pothole in Street,0.2169555573810893
+74,Garbage Cart Black Maintenance/Replacement,0.1870533147128892
+74,Graffiti Removal,0.02275527807442701
+74,Abandoned Vehicle Complaint,0.02489115255072702
+74,Street Light Out,0.16709110326131602
+74,Tree Debris,0.13571017826336976
+74,Rodent Baiting/Rat Complaint,0.06046167748295408
+74,Tree Trim,0.18508173827322763
+37,Pothole in Street,0.25183887915936953
+37,Garbage Cart Black Maintenance/Replacement,0.15376532399299475
+37,Graffiti Removal,0.07950963222416813
+37,Abandoned Vehicle Complaint,0.040630472854640984
+37,Street Light Out,0.09912434325744308
+37,Tree Debris,0.10577933450087566
+37,Rodent Baiting/Rat Complaint,0.1415061295971979
+37,Tree Trim,0.12784588441331
+32,Pothole in Street,0.29180007597547075
+32,Garbage Cart Black Maintenance/Replacement,0.0015737776089433983
+32,Graffiti Removal,0.4946003147555218
+32,Abandoned Vehicle Complaint,0.05562489824713735
+32,Street Light Out,0.09301568350789602
+32,Tree Debris,0.0034731643783578446
+32,Rodent Baiting/Rat Complaint,0.05084929722689532
+32,Tree Trim,0.0090627882997775
+31,Pothole in Street,0.10026577503429356
+31,Garbage Cart Black Maintenance/Replacement,0.04308127572016461
+31,Graffiti Removal,0.7214720507544582
+31,Abandoned Vehicle Complaint,0.03026406035665295
+31,Street Light Out,0.04140946502057613
+31,Tree Debris,0.005679869684499314
+31,Rodent Baiting/Rat Complaint,0.01978309327846365
+31,Tree Trim,0.03804441015089163
+50,Pothole in Street,0.2502894635275955
+50,Garbage Cart Black Maintenance/Replacement,0.15978386723272867
+50,Graffiti Removal,0.040331918178309535
+50,Abandoned Vehicle Complaint,0.06657661134697028
+50,Street Light Out,0.13932844461597838
+50,Tree Debris,0.14473176379776148
+50,Rodent Baiting/Rat Complaint,0.029525279814743344
+50,Tree Trim,0.16943265148591277
