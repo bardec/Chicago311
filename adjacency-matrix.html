@@ -13,11 +13,12 @@
   <script src="http://d3js.org/topojson.v1.min.js"></script>
   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="resources/js/tipsy/src/javascripts/jquery.tipsy.js"></script>
+  <link href="resources/js/tipsy/src/stylesheets/tipsy.css" rel="stylesheet" type="text/css"/>
   <script>
 
 
     d3.csv('resources/summarized_311_calls.csv', function(err,statistics) {
-      var margin = {top: 200, right: 0, bottom: 10, left: 300},
+      var margin = {top: 300, right: 0, bottom: 10, left: 300},
         width = 3*720/4,
         height = 3*720/4;
       var communityNumbers = [];
@@ -120,6 +121,16 @@
             .attr('height', xScale.rangeBand())
             .style('fill', zScale);
       };
+           
+           $('rect').tipsy({
+                           gravity: 'e',
+                           html: true,
+                           trigger: 'hover',
+                           title: function() {
+                           var d = this.__data__;
+                           return d;
+                           }
+                           })
 
     });
 
