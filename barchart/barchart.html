@@ -281,8 +281,8 @@
                    // Copy-on-write since tweens are evaluated after a delay.
                    var x0 = x.domain(data.sort(this.checked
                                                ? function(a, b) { return b["Average Response Time"] - a["Average Response Time"]; }
-                                               : function(a, b) { return d3.ascending(a["Police District"], b["Police District"]); })
-                                     .map(function(d) { return d["Police District"]; }))
+                                               : function(a, b) { return d3.ascending(+a["Police District"], +b["Police District"]); })
+                                     .map(function(d) { return +d["Police District"]; }))
                    .copy();
                    
                    svg.selectAll(".bar")

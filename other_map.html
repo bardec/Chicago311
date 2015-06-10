@@ -291,9 +291,10 @@
             .attr("class", "x axis")
             .attr("transform", "translate(0," + 3*height/4 + ")")
             .call(xAxisBarGraphIncome)
-            .selectAll('text')
-              .attr('font-size', '10')
-              .text(function(d) { return d.name});
+            .selectAll("text")
+                .style("text-anchor", "end");
+            //.attr('font-size', '10')
+            //.text(function(d) {return d.name;});
 
           barGraph.append("g")
             .attr("class", "y axis")
@@ -352,7 +353,7 @@
 
               $('document').ready(function() {
                   $('rect').tipsy({
-                    gravity: 'e',
+                    gravity: 'w',
                     html: true,
                     title: function() {
                       var d = this.__data__, size = this.parentNode.__data__.percentages[d].y1-this.parentNode.__data__.percentages[d].y0;
@@ -385,9 +386,9 @@
                     .attr("class", "x axis")
                     .attr("transform", "translate(0," + 3*height/4 + ")")
                     .call(xAxisBarGraph)
-                    .selectAll('text')
-                    .attr('font-size', '10')
-                    .text(function(d) { return d.name});
+                    .selectAll('text');
+                    //.attr('font-size', '10');
+                    //.text(function(d) { return d.name;});
 
                   barGraph.selectAll('.communityAreaBar').remove();
                   bar = barGraph.selectAll('.communityAreaBar')
@@ -422,6 +423,17 @@
                       return yBarGraph(d.y1)-2;})
                     .attr("fill", function(d,i) {
                       return barColors(i);});
+                                  
+                    $('document').ready(function() {
+                    $('rect').tipsy({
+                        gravity: 'w',
+                        html: true,
+                        title: function() {
+                        var d = this.__data__, size = this.parentNode.__data__.percentages[d].y1-this.parentNode.__data__.percentages[d].y0;
+                        return d + ": " + size;
+                        }
+                    })
+                                        })
 
                 });
               });
