@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <style>
+    line {
+      stroke: #fff;
+    }
+    svg {
+      font: 10px sans-serif;
+    }
+  </style>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="resources/js/tipsy/src/javascripts/jquery.tipsy.js"></script>
+  <script>
+
+
+    d3.csv('resources/summarized_311_calls.csv', function(err,statistics) {
+      var margin = {top: 200, right: 0, bottom: 10, left: 300},
+        width = 3*720/4,
+        height = 3*720/4;
+      var communityNumbers = [];
+      var neighborhoods = [];
+
+      for (var i = 0; i < 77; i++) {
+        communityNumbers.push(String(i+1));
+      }
+      for (var i = 0; i < communityNumbers.length; i++) {
+        neighborhoods.push(statistics.filter(function(d) { return communityNumbers[i] === d['Community Area']}));
+      }
+
+      neighborhoods = neighborhoods.map(function(d) {
+        var name = d[0]['Community Area'];
+        var requests = {};
+        $.each(d, function(index, val) {
+          var type = val['Type of Service Request'];
+          requests[type] = +val['Percentage of Total'];
+        });
+        return {number: +name,types: requests};
+      });
+
+      var adjacency = [];
+      for (var i = 0; i < Object.keys(neighborhoods[0].types).length; i++) {
+        var iKey = Object.keys(neighborhoods[0].types)[i]
+          adjacency.push([]);
+        for (var j = 0; j < Object.keys(neighborhoods[0].types).length; j++) {
+          var jKey = Object.keys(neighborhoods[0].types)[j]
+            adjacency[i].push(0);
+          for (var k = 0; k < neighborhoods.length; k++) {
+          if (neighborhoods[k].types[iKey] > neighborhoods[k].types[jKey])
+            adjacency[i][j] += neighborhoods[k].types[jKey] / neighborhoods[k].types[iKey];
+          else
+            adjacency[i][j] += neighborhoods[k].types[iKey] / neighborhoods[k].types[jKey];
+          }
+          adjacency[i][j] /= (neighborhoods.length * 1.0);
+        }
+      }
+
+      var svg = d3.select('body').append('svg')
+          .attr('width', width + margin.left + margin.right)
+          .attr('height', height + margin.top + margin.bottom)
+          .attr('margin-left', -margin.left + 'px')
+        .append('g')
+          .attr('transform', 'translate(' + margin.left + ',' +
+                margin.top + ')');
+
+      var xScale = d3.scale.ordinal().rangeBands([0, width]),
+          zScale = d3.scale.linear().domain([0,1]).range(['white','red']);
+
+      xScale.domain(d3.range(Object.keys(neighborhoods[0].types).length)
+        .sort(function(a, b) { return d3.ascending(Object.keys(neighborhoods[0].types)[a], Object.keys(neighborhoods[0].types)[b])}));
+
+      svg.append('rect')
+        .attr('class', 'background')
+        .attr('width', width)
+        .attr('height', height);
+
+      var row = svg.selectAll('.row')
+          .data(adjacency)
+        .enter().append('g')
+          .attr('class', 'row')
+          .attr('transform', function(d,i) {
+            return 'translate(0,' + xScale(i) + ')';
+          }).each(row);
+
+      row.append('line')
+        .attr('x2', width);
+
+      row.append('text')
+        .attr('x', -6)
+        .attr('y', xScale.rangeBand() / 2)
+        .attr('dy', '.32em')
+        .attr('text-anchor', 'end')
+        .text(function(d,i) { return Object.keys(neighborhoods[0].types)[i];});
+      var column = svg.selectAll('.column')
+          .data(adjacency)
+        .enter().append('g')
+          .attr('class', 'column')
+          .attr('transform', function(d,i) { return 'translate(' + xScale(i) + ')rotate(-90)'});
+
+      column.append('line')
+        .attr('x1', -width)
+
+      column.append('text')
+        .attr('x',6)
+        .attr('y', xScale.rangeBand() / 2)
+        .attr('dy', '.32em')
+        .attr('text-start', 'start')
+        .text(function(d,i) { return Object.keys(neighborhoods[0].types)[i];});
+
+      function row(row) {
+        var cell = d3.select(this).selectAll('.cell')
+            .data(row)
+          .enter().append('rect')
+            .attr('class','cell')
+            .attr('x', function(d,i) {
+              return xScale(i);
+            }).attr('width', xScale.rangeBand())
+            .attr('height', xScale.rangeBand())
+            .style('fill', zScale);
+      };
+
+    });
+
+  </script>
+</body>
