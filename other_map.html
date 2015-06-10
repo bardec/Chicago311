@@ -291,8 +291,9 @@
             .attr("class", "x axis")
             .attr("transform", "translate(0," + 3*height/4 + ")")
             .call(xAxisBarGraphIncome)
-            .selectAll("text")
-                .style("text-anchor", "end");
+                .selectAll("text");
+                //.style("text-anchor", "end")
+                //.attr("dx", "1.4em");
             //.attr('font-size', '10')
             //.text(function(d) {return d.name;});
 
@@ -330,7 +331,7 @@
               .on('click', function(d) {
                 svg.selectAll('.communityArea').filter(function(val) {
                   return d.neighborhoods.indexOf(val.id) > -1;
-                }).style('fill', 'black');
+                }).style('fill', 'yellow');
                 svg.selectAll('.communityArea').filter(function(val) {
                   return d.neighborhoods.indexOf(val.id) <= -1;
                 }).style('fill', 'white');
@@ -403,7 +404,7 @@
                     .on('click', function(d) {
                       svg.selectAll('.communityArea').filter(function(val) {
                         return d.neighborhoods.indexOf(val.id) > -1;
-                      }).style('fill', 'black');
+                      }).style('fill', 'yellow');
                       svg.selectAll('.communityArea').filter(function(val) {
                         return d.neighborhoods.indexOf(val.id) <= -1;
                       }).style('fill', 'white');
