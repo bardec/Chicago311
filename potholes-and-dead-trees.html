@@ -138,7 +138,7 @@
               .attr('dy', '.15em')
               .attr('font-size', '10')
               .attr('transform', function(d) { return 'rotate(-90)'})
-              .text(function(d) {return data[d]['COMMUNITY AREA NAME'];});
+              .text(function(d) {return data[d-1]['COMMUNITY AREA NAME'];});
 
           barGraph.append("g")
             .attr("class", "y axis")
