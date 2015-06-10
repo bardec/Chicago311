@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <style>
+    .communityArea {
+      fill: none;
+      stroke: black;
+    }
+    .communityArea-boundary {
+      fill: none;
+      stroke: #777;
+      stroke-linejoin: round;
+    }
+    .selected {
+      stroke: red;
+    }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  </style>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="resources/js/tipsy/src/javascripts/jquery.tipsy.js"></script>
+  <link href="resources/js/tipsy/src/stylesheets/tipsy.css" rel="stylesheet" type="text/css"/>
+  <script>
+    var ssa_boundries = "resources/communityAreas.json";
+    var color = d3.scale.linear().range(["white", "blue"]).domain([0,5]);
+    var margins = {top:20, bottom:20, left:10, right:10};
+    var width = window.innerWidth - margins.left - margins.right,
+        height = window.innerHeight;
+
+    var barGraph = d3.select("body").append("svg")
+        .style("float", "left")
+        .style("width", "50%")
+        .attr("height", height);
+
+    var svg = d3.select("body").append("svg")
+        .style("float", "right")
+        .attr("width", "50%")
+        .attr("height", height);
+
+    var projection = d3.geo.mercator()
+      .translate([width/4, height/2])
+      .center([-87.6692, 41.8500])
+      .scale(40000);
+
+    var data;
+    var collection = [];
+    var ssa_percentages = {};
+    for (i = 1; i < 78; i++) {
+      ssa_percentages[String(i)] = {};
+    }
+
+    var barColors;
+
+
+    //get percentage for all SSAs
+    d3.csv("resources/summarized_311_calls.csv", function(income) {
+      ssa_percentages = d3.nest()
+        .key(function(d) { return d['Community Area'] })
+        .key(function(d) { return d['Type of Service Request']})
+        .entries(income);
+      ssa_percentages.forEach(function(d) {
+        var y0 = 0;
+        d.values = d.values.map(function(da) {
+          da['y0'] = y0;
+          y0 += +da.values[0]['Percentage of Total'];
+          da['y1'] = y0;
+          return da;
+        });
+        return d;
+      })
+
+      var colorRange = d3.scale.category10()
+        .domain(ssa_percentages[0].values.map(function(d) {
+          return d.key;}))
+        .range();
+      barColors = d3.scale.ordinal()
+        .domain(ssa_percentages[0].values.map(function(d) {
+          return d.key;}))
+        .range(colorRange.slice(0,8));
+
+      var xBarGraph = d3.scale.ordinal()
+        .domain(ssa_percentages.map(function(d) {return +d.key}))
+        .rangeRoundBands([0,width/2], .1);
+
+      var yBarGraph = d3.scale.linear()
+        .rangeRound([3*height/4, height/4]);
+
+      var xAxisBarGraph = d3.svg.axis()
+        .scale(xBarGraph)
+        .orient("bottom");
+
+      var yAxisBarGraph = d3.svg.axis()
+        .scale(yBarGraph)
+        .orient("left");
+
+
+      d3.csv("resources/income.csv", function(income){
+        data = income;
+        d3.json(ssa_boundries, function(error, chicago) {
+          if (error) return console.error(error);
+          var communities = topojson.feature(chicago, chicago.objects.commAreas);
+          var path = d3.geo.path().projection(projection);
+          svg.selectAll(".communityArea")
+            .data(communities.features, function(d) {return +d.id;})
+            .enter().append("path")
+            .attr("class", "communityArea")
+            .attr("id", function(d,i) { return d.id; })
+            .attr("d", path)
+            .style("fill", function(d){
+              var hardship = data[d.id-1]["HARDSHIP INDEX"];
+              if(0 <= hardship && hardship < 20)
+                return color(0);
+              else if(20 <= hardship && hardship < 40)
+                return color(1);
+              else if(40 <= hardship && hardship < 60)
+                return color(2);
+              else if(60 <= hardship && hardship < 80)
+                return color(3);
+              else
+                return color(4);
+            })
+            .append("title")
+            .text(function(d){ return income[d.id-1]["CommunityAreaNumber"];});
+
+          barGraph.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + 3*height/4 + ")")
+            .call(xAxisBarGraph)
+            .selectAll('text')
+              .style('text-anchor', 'end')
+              .attr('dx', '-.8em')
+              .attr('dy', '.15em')
+              .attr('font-size', '10')
+              .attr('transform', function(d) { return 'rotate(-90)'})
+              .text(function(d) {return data[d]['COMMUNITY AREA NAME'];});
+
+          barGraph.append("g")
+            .attr("class", "y axis")
+            .call(yAxisBarGraph)
+          var legend = barGraph.selectAll(".legend")
+              .data(barColors.domain().slice().reverse())
+            .enter().append('g')
+              .attr('class', 'legend')
+              .attr('transform', function(d,i) { return "translate(0," + i * 20 + ")"});
+
+          legend.append('rect')
+              .attr('x', width/2-18)
+              .attr('width', 18)
+              .attr('height', 18)
+              .style('fill', function(d,i) {return barColors(d)});
+
+          legend.append('text')
+            .attr('x', width/2-24)
+            .attr('y', 9)
+            .attr('dy', '.35em')
+            .style('text-anchor', 'end')
+            .text(function(d) {return d;});
+
+
+          svg.selectAll('.communityArea').on('click', function(d) {
+            if (collection.indexOf(d3.select(this).attr('id')) != -1) {
+              collection.splice(collection.indexOf(d3.select(this).attr('id')),1);
+              d3.select(this).classed("selected", false);
+            } else {
+              new_this = d3.select(this.parentNode.appendChild(this)).classed("selected", true);
+              collection.push(d3.select(this).attr('id'));
+            }
+
+            var data_collection = collection.map(function(val) {
+              return ssa_percentages[+val-1];
+            });
+
+            var bar = barGraph.selectAll(".communityAreaBar")
+              .data(data_collection, function(d) { return +d.key;})
+
+            var randColor = d3.scale.category20();
+            bar.exit().remove();
+            bar.enter().append("g")
+              .attr("class","communityAreaBar");
+            bar
+              .attr("transform", function(d) { return "translate(" + xBarGraph(parseInt(d.key))+",0)";});
+
+            var stackedBar = bar.selectAll('rect')
+              .data(function(d) {return d.values});
+
+            stackedBar.enter().append('rect')
+              .attr("height", function(d) {
+                return yBarGraph(d.y0)-yBarGraph(d.y1);
+              })
+              .attr("y", function(d) { return yBarGraph(d.y1)-2;})
+              .attr("fill", function(d,i) { return barColors(i);});
+
+            $('rect').tipsy({
+              gravity: 'e',
+              html: true,
+              title: function() {
+                var d = this.__data__, type = d.key, size = d.y1-d.y0;
+                return type + ": " + size;
+              }
+            })
+
+            stackedBar
+              .attr("width", xBarGraph.rangeBand())
+            d3.event.stopPropagation();
+          });
+        });
+      });
+    });
+    $('document').ready(function() {
+      $(':radio').click(function() {
+
+        var val = $('input[name=filter]:checked').val();
+        var saturatedColor = barColors(val);
+        var mapColors = d3.scale.linear()
+            .range(["white", saturatedColor])
+            .domain([0,1]);
+        svg.selectAll(".communityArea").style('fill', function(d) {
+          types = ssa_percentages[+d.id-1].values;
+          for (i = 0; i < types.length; i++) {
+            if (types[i].key === val)
+              return mapColors(types[i].y1-types[i].y0);
+          }});
+      });
+    });
+    // switch($('input[name=filter]:checked').val()) {
+    //   case 'hardship':
+    //     svg.selectAll('.communityArea').style("fill", function(d) {
+    //       var color = d3.scale.linear().range(["white", "blue"]).domain([0,5]);
+    //       var hardship = data[d.id-1]["HARDSHIP INDEX"];
+    //       if (0 <= hardship && hardship < 20)
+    //         return color(0);
+    //       else if (20 <= hardship && hardship < 40)
+    //         return color(1);
+    //       else if (40 <= hardship && hardship < 60)
+    //         return color(2);
+    //       else if (60 <= hardship && hardship < 80)
+    //         return color(3);
+    //       else
+    //         return color(4);
+    //     });
+    //     break;
+    //   case 'income':
+    //     svg.selectAll('.communityArea').style("fill", function(d) {
+    //       var color = d3.scale.linear().range(["white", "green"]).domain([0,5]);
+    //       var income = data[d.id-1]["PER CAPITA INCOME"];
+    //       if (0 <= income && income <= 9075)
+    //         return color(0);
+    //       else if (9076 <= income && income <= 36900)
+    //         return color(1);
+    //       else if (36901 <= income && income <= 89350)
+    //         return color(2);
+    //       else if (89351 <= income && income < 186350)
+    //         return color(3);
+    //       else
+    //         return color(4);
+    //     });
+    //     break;
+    //   default:
+    //     break;
+    // }
+
+  </script>
+  <form action="">
+    <input type="radio" name="filter" value="Pothole in Street">Pothole in Street<br>
+    <input type="radio" name="filter" value="Garbage Cart Black Maintenance/Replacement">Garbage Cart Black Maintenance/Replacement<br>
+    <input type="radio" name="filter" value="Graffiti Removal">Graffiti Removal<br>
+    <input type="radio" name="filter" value="Abandoned Vechicle Complaint">Abandoned Vechicle Complaint<br>
+    <input type="radio" name="filter" value="Street Light Out">Street Light Out<br>
+    <input type="radio" name="filter" value="Tree Debris">Tree Debris<br>
+    <input type="radio" name="filter" value="Rodent Baiting/Rat Complaint">Rodent Baiting/Rat Complaint<br>
+    <input type="radio" name="filter" value="Tree Trim">Tree Trim<br>
+  </form>
+</body>
+
