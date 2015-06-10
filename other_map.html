@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+  <style>
+    .communityArea {
+      fill: none;
+      stroke: black;
+    }
+    .communityArea-boundary {
+      fill: none;
+      stroke: #777;
+      stroke-linejoin: round;
+    }
+    .selected {
+      stroke: red;
+    }
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  </style>
+  <script src="http://d3js.org/d3.v3.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="resources/js/tipsy/src/javascripts/jquery.tipsy.js"></script>
+  <link href="resources/js/tipsy/src/stylesheets/tipsy.css" rel="stylesheet" type="text/css"/>
+  <script>
+    var ssa_boundries = "resources/communityAreas.json";
+    var color = d3.scale.linear().range(["white", "blue"]).domain([0,5]);
+    var margins = {top:20, bottom:20, left:10, right:10};
+    var width = window.innerWidth - margins.left - margins.right,
+        height = window.innerHeight;
+
+    var barGraph = d3.select("body").append("svg")
+        .style("float", "left")
+        .style("width", "50%")
+        .attr("height", height);
+
+    var svg = d3.select("body").append("svg")
+        .style("float", "right")
+        .attr("width", "50%")
+        .attr("height", height);
+
+    var projection = d3.geo.mercator()
+      .translate([width/4, height/2])
+      .center([-87.6692, 41.8500])
+      .scale(40000);
+
+    var data;
+    var collection = [];
+    var ssa_percentages = {};
+    for (i = 1; i < 78; i++) {
+      ssa_percentages[String(i)] = {};
+    }
+
+    var barColors;
+
+
+    //get percentage for all SSAs
+    d3.csv("resources/summarized_311_calls.csv", function(statistics) {
+      d3.csv("resources/income.csv", function(income){
+        d3.json(ssa_boundries, function(error, chicago) {
+
+          ssa_percentages = d3.nest()
+            .key(function(d) { return d['Community Area'] })
+            .key(function(d) { return d['Type of Service Request']})
+            .entries(statistics);
+          ssa_percentages.forEach(function(d) {
+            var y0 = 0;
+            d.values = d.values.map(function(da) {
+              da['y0'] = y0;
+              y0 += +da.values[0]['Percentage of Total'];
+              da['y1'] = y0;
+              return da;
+            });
+            return d;
+          });
+
+          //sort data into dictionary
+          neighborhoods_by_income = [{},{},{}];
+          income = income.filter(function (d) {return d !== 'undefined'});
+          neighborhoods_by_income[0] = income.filter(function(d) {
+            return +d["PER CAPITA INCOME"]<(9075+1);
+          });
+          neighborhoods_by_income[1] = income.filter(function(d) {
+            return +d["PER CAPITA INCOME"]<(36900+1) &&
+              +d["PER CAPITA INCOME"]>9075;
+          });
+          neighborhoods_by_income[2] = income.filter(function(d) {
+            return +d["PER CAPITA INCOME"]<(89350+1) &&
+              +d["PER CAPITA INCOME"]>36900;
+          });
+          neighborhoods_by_income = neighborhoods_by_income.map(function(income_level, income_index) {
+            var start_y0 = 0;
+            var neighborhoods = income_level.map(function(d) {return d['CommunityAreaNumber']});
+            var stats = neighborhoods.map(function(d) {return ssa_percentages[+d-1];});
+            var percentages = {'Pothole in Street': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Garbage Cart Black Maintenance/Replacement': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Graffiti Removal': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Abandoned Vehicle Complaint': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Street Light Out': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Tree Debris': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Rodent Baiting/Rat Complaint': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Tree Trim': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 }};
+
+            for (p_index in percentages) {
+              var value = 0;
+              for (index in stats) {
+                var neighborhood = stats[index];
+                for (k in neighborhood.values) {
+                  if (neighborhood.values[k].key == p_index){
+                    value += (neighborhood.values[k].y1 - neighborhood.values[k].y0);}
+                }
+              };
+              percentages[p_index].value = value;
+            };
+            for (index in percentages) {
+              percentages[index].value /= (neighborhoods.length * 1.0);
+              percentages[index].y0 = start_y0;
+              start_y0 += percentages[index].value;
+              percentages[index].y1 = start_y0;
+            };
+
+            var name = ''
+            switch (income_index){
+              case 0: name='0-9K';
+                      break;
+              case 1: name='9K-37K';
+                      break;
+              case 2: name='37K-90K';
+                      break;
+              default: name='';
+                      break;
+
+            }
+            return {name: name,
+              neighborhoods: neighborhoods,
+              percentages: percentages};
+          });
+
+          var neighborhoods_by_hardship = [{},{},{},{},{}];
+          neighborhoods_by_hardship[0] = income.filter(function(d) {
+            return +d["HARDSHIP INDEX"]<20;
+          });
+          neighborhoods_by_hardship[1] = income.filter(function(d) {
+            return +d["HARDSHIP INDEX"]<40 &&
+              +d["HARDSHIP INDEX"]>=20;
+          });
+          neighborhoods_by_hardship[2] = income.filter(function(d) {
+            return +d["HARDSHIP INDEX"]<60 &&
+              +d["HARDSHIP INDEX"]>=40;
+          });
+          neighborhoods_by_hardship[3] = income.filter(function(d) {
+            return +d["HARDSHIP INDEX"]<80 &&
+              +d["HARDSHIP INDEX"]>=60;
+          });
+          neighborhoods_by_hardship[4] = income.filter(function(d) {
+            return +d["HARDSHIP INDEX"]>=80;
+          });
+
+          neighborhoods_by_hardship = neighborhoods_by_hardship.map(function(hardship_level, hardship_index) {
+            var start_y0 = 0;
+            var neighborhoods = hardship_level.map(function(d) {return d['CommunityAreaNumber']});
+            var stats = neighborhoods.map(function(d) {return ssa_percentages[+d-1];});
+            var percentages = {'Pothole in Street': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Garbage Cart Black Maintenance/Replacement': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Graffiti Removal': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Abandoned Vehicle Complaint': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Street Light Out': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Tree Debris': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Rodent Baiting/Rat Complaint': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 },
+                            'Tree Trim': { value: 0.0,
+                                                      y0: 0,
+                                                      y1: 0 }};
+
+            for (p_index in percentages) {
+              var value = 0;
+              for (index in stats) {
+                var neighborhood = stats[index];
+                for (k in neighborhood.values) {
+                  if (neighborhood.values[k].key == p_index){
+                    value += (neighborhood.values[k].y1 - neighborhood.values[k].y0);}
+                }
+              };
+              percentages[p_index].value = value;
+            };
+            for (index in percentages) {
+              percentages[index].value /= (neighborhoods.length * 1.0);
+              percentages[index].y0 = start_y0;
+              start_y0 += percentages[index].value;
+              percentages[index].y1 = start_y0;
+            };
+
+            var name = ''
+            switch (hardship_index){
+              case 0: name='0-20';
+                      break;
+              case 1: name='20-40';
+                      break;
+              case 2: name='40-60';
+                      break;
+              case 3: name='60-80';
+                      break;
+              case 4: name='80-100';
+                      break;
+              default: name=''
+            }
+            return {name: name,
+              neighborhoods: neighborhoods,
+              percentages: percentages};
+          });
+
+          var colorRange = d3.scale.category10()
+            .domain(ssa_percentages[0].values.map(function(d) {
+              return d.key;}))
+            .range();
+          barColors = d3.scale.ordinal()
+            .domain(ssa_percentages[0].values.map(function(d) {
+              return d.key;}))
+            .range(colorRange.slice(0,8));
+
+          var xBarGraphIncome = d3.scale.ordinal()
+            .domain(neighborhoods_by_income.map(function(d) {return d.name;}))
+            .rangeRoundBands([0,width/2], .1);
+
+          var xBarGraphHardship = d3.scale.ordinal()
+            .domain(neighborhoods_by_hardship.map(function(d) {return d.name;}))
+            .rangeRoundBands([0,width/2], .1);
+
+          var yBarGraph = d3.scale.linear()
+            .rangeRound([3*height/4, height/4]);
+
+          var xAxisBarGraphIncome = d3.svg.axis()
+            .scale(xBarGraphIncome)
+            .orient("bottom");
+
+          var xAxisBarGraphHardship = d3.svg.axis()
+            .scale(xBarGraphHardship)
+            .orient("bottom");
+
+          var yAxisBarGraph = d3.svg.axis()
+            .scale(yBarGraph)
+            .orient("left");
+
+          data = income;
+          if (error) return console.error(error);
+          var communities = topojson.feature(chicago, chicago.objects.commAreas);
+          var path = d3.geo.path().projection(projection);
+          svg.selectAll(".communityArea")
+            .data(communities.features, function(d) {return +d.id;})
+            .enter().append("path")
+            .attr("class", "communityArea")
+            .attr("id", function(d,i) { return d.id; })
+            .attr("d", path)
+            .append("title")
+            .text(function(d){ return income[d.id-1]["CommunityAreaNumber"];});
+
+          barGraph.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + 3*height/4 + ")")
+            .call(xAxisBarGraphIncome)
+            .selectAll('text')
+              .attr('font-size', '10')
+              .text(function(d) { return d.name});
+
+          barGraph.append("g")
+            .attr("class", "y axis")
+            .call(yAxisBarGraph);
+
+          var legend = barGraph.selectAll(".legend")
+              .data(barColors.domain().slice().reverse())
+            .enter().append('g')
+              .attr('class', 'legend')
+              .attr('transform', function(d,i) { return "translate(0," + i * 20 + ")"});
+
+          legend.append('rect')
+              .attr('x', width/2-18)
+              .attr('width', 18)
+              .attr('height', 18)
+              .style('fill', function(d,i) {return barColors(d)});
+
+          legend.append('text')
+            .attr('x', width/2-24)
+            .attr('y', 9)
+            .attr('dy', '.35em')
+            .style('text-anchor', 'end')
+            .text(function(d) {return d;});
+
+            var bar = barGraph.selectAll(".communityAreaBar")
+              .data(neighborhoods_by_income)
+
+            bar.enter().append("g")
+              .attr("class","communityAreaBar")
+
+            bar
+              .attr("transform", function(d) { return "translate(" + xBarGraphIncome(d.name)+",0)";})
+              .on('click', function(d) {
+                svg.selectAll('.communityArea').filter(function(val) {
+                  return d.neighborhoods.indexOf(val.id) > -1;
+                }).style('fill', 'black');
+                svg.selectAll('.communityArea').filter(function(val) {
+                  return d.neighborhoods.indexOf(val.id) <= -1;
+                }).style('fill', 'white');
+                d3.event.stopPropagation();
+              });
+
+            var stackedBar = bar.selectAll('rect')
+              .data(function(d) {return d3.keys(d.percentages);})
+              .enter().append('rect')
+              .attr("height", function(d) {
+                d = this.parentNode.__data__.percentages[d];
+                return yBarGraph(d.y0)-yBarGraph(d.y1);
+              })
+              .attr('width', xBarGraphIncome.rangeBand())
+              .attr("y", function(d) {
+                d = this.parentNode.__data__.percentages[d];
+                return yBarGraph(d.y1)-2;})
+              .attr("fill", function(d,i) {
+                return barColors(i);});
+
+              $('document').ready(function() {
+                  $('rect').tipsy({
+                    gravity: 'e',
+                    html: true,
+                    title: function() {
+                      var d = this.__data__, size = this.parentNode.__data__.percentages[d].y1-this.parentNode.__data__.percentages[d].y0;
+                      return d + ": " + size;
+                    }
+                  })
+
+                $(':radio').click(function() {
+
+                  var val = $('input[name=filter]:checked').val();
+                  var xScale;
+                  var xAxisBarGraph;
+                  var neighborhoods_by_val;
+                  switch(val) {
+                    case 'income':
+                      xScale = xBarGraphIncome;
+                      neighborhoods_by_val = neighborhoods_by_income;
+                      xAxisBarGraph = xAxisBarGraphIncome;
+                      break;
+                    case 'hardship':
+                      xScale = xBarGraphHardship;
+                      neighborhoods_by_val = neighborhoods_by_hardship;
+                      xAxisBarGraph = xAxisBarGraphHardship;
+                      break;
+                  }
+                  svg.selectAll('.communityArea').style('fill','white');
+
+                  barGraph.selectAll('.x.axis').remove();
+                  barGraph.append('g')
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + 3*height/4 + ")")
+                    .call(xAxisBarGraph)
+                    .selectAll('text')
+                    .attr('font-size', '10')
+                    .text(function(d) { return d.name});
+
+                  barGraph.selectAll('.communityAreaBar').remove();
+                  bar = barGraph.selectAll('.communityAreaBar')
+                    .data(neighborhoods_by_val);
+
+                  bar.exit().remove();
+                  bar.enter().append("g")
+                    .attr("class","communityAreaBar");
+
+                  bar
+                    .attr("transform", function(d) { return "translate(" + xScale(d.name)+",0)";})
+                    .on('click', function(d) {
+                      svg.selectAll('.communityArea').filter(function(val) {
+                        return d.neighborhoods.indexOf(val.id) > -1;
+                      }).style('fill', 'black');
+                      svg.selectAll('.communityArea').filter(function(val) {
+                        return d.neighborhoods.indexOf(val.id) <= -1;
+                      }).style('fill', 'white');
+
+                      d3.event.stopPropagation();
+                    });
+                  var stackedBar = bar.selectAll('rect')
+                    .data(function(d) {return d3.keys(d.percentages);})
+                    .enter().append('rect')
+                    .attr("height", function(d) {
+                      d = this.parentNode.__data__.percentages[d];
+                      return yBarGraph(d.y0)-yBarGraph(d.y1);
+                    })
+                    .attr('width', xScale.rangeBand())
+                    .attr("y", function(d) {
+                      d = this.parentNode.__data__.percentages[d];
+                      return yBarGraph(d.y1)-2;})
+                    .attr("fill", function(d,i) {
+                      return barColors(i);});
+
+                });
+              });
+        });
+      });
+    });
+
+  </script>
+  <form action="">
+    <input type="radio" name="filter" value="income">Income Level<br>
+    <input type="radio" name="filter" value="hardship">Hardship Index<br>
+  </form>
+</body>
